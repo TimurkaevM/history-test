@@ -1,0 +1,16 @@
+.message {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.add__btn {
+  background-color: blue;
+  color: white;
+  font-size: 17px;
+  height: 40px;
+  width: 135px;
+  cursor: pointer;
+  border-radius: 10px;
+  text-transform: uppercase;
+}

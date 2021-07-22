@@ -1,0 +1,45 @@
+.send {
+  padding-top: 20px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.title__name {
+  font-size: 25px;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.title__info {
+  font-size: 18px;
+}
+
+.title__info span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.title__info::before {
+  content: '*';
+  color: red;
+  font-size: 23px;
+}
+
+.title__dialog {
+  width: 800px;
+  height: 800px;
+  background-color: #ffffff;
+}

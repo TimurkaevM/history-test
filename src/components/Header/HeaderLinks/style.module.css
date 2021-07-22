@@ -1,0 +1,38 @@
+.links {
+  display: flex;
+  height: 100%;
+}
+.link {
+  display: block;
+  width: 130px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  padding: 5px 0;
+  border: 1px solid #ffffff;
+  text-align: center;
+}
+
+.active {
+  background-color: #ecaf54;
+}
+
+.link:hover {
+  background-color: #ecaf54;
+  transition: .3s;
+}
+
+.link__img {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+.link__img  img {
+  width: 100%;
+  display: block;
+}
+.link__img  svg .svg__path {
+  stroke:#ecaf54;
+  stroke-width:#ecaf54;
+  fill: #ecaf54;
+  }
