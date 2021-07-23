@@ -1,13 +1,15 @@
+import { useState } from 'react';
+import CloseButton from '../../../../General/buttons/CloseButton/CloseButton';
 import video from '../../../../../assets/Icons/video.svg';
 import doc from '../../../../../assets/Icons/doc.svg';
 import sound from '../../../../../assets/Icons/sound.svg';
 import photo from '../../../../../assets/Icons/photo.svg';
-import CloseButton from '../../../../General/buttons/CloseButton/CloseButton';
 
 import style from './style.module.css';
 
-
 function FailsBlock(props) {
+  const [ open, setOpen] = useState(false);
+
   return (
     <ul className={`${style.fails__block} ${props.failAdd ? '' : "style.list__active"}`}>
       <li className={style.block__item}>
