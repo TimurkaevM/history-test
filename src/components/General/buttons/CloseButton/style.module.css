@@ -1,0 +1,21 @@
+.btn__close {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 25;
+  text-align: center;
+}
+.svg {
+  cursor: pointer;
+}
+.path {
+  display: block;
+  fill: black;
+}
+
+.svg:hover .path {
+  fill: red;
+  transition: .3s;
+}

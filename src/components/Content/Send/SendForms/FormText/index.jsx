@@ -28,7 +28,7 @@ function FormText() {
         !!!Принадлежность текста не настроена
       </div>
       <Dialog handleClose={handleClose} open={open}>
-        <FormDialog />
+        <FormDialog handleClose={handleClose} />
       </Dialog>
     </div>
   )

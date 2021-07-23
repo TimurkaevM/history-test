@@ -3,3 +3,27 @@
   height: 800px;
   background-color: #ffffff;
 }
+
+.title__info {
+  position: absolute;
+  z-index: 5;
+  top: -35px;
+  left: 0;
+  height: 35px;
+  font-size: 18px;
+  color: #e2d9d9;
+}
+
+.title__info span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  margin-left: 4px;
+  cursor: pointer;
+}
