@@ -1,0 +1,18 @@
+.button label {
+  display: block;
+  width: 350px;
+  background-color: rgb(110, 155, 206);
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button input {
+display: none;
+}
+
+.button:not(:first-child) {
+  margin-left: 10px;
+}
