@@ -1,18 +1,40 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { UploadGroupFails } from '../../../../../../../redux/ducks/files';
+import { v4 as uuidv4 } from 'uuid';
 
 import style from './style.module.css';
 
 function UploadGroup(props) {
+  const dispatch = useDispatch();
 
-  const [ main, setMain ] = useState([]);
-  console.log(main)
+  function generateId () {
+    const id = uuidv4();
+
+      return id;
+  }
 
   function fileUploadHandler(event) {
     const files = [...event.target.files];
-    console.log(files)
-    
-    setMain(files);
-}
+
+    const filterFiles = files.filter( file => {
+      if(!file.type.match(props.format)) {
+        return false
+      }
+      return true
+    });
+
+    const newArr = [];
+
+    filterFiles.forEach(file => {
+      newArr.push({
+        id: generateId(),
+        file: file
+      })
+    })
+
+    dispatch(UploadGroupFails(newArr, props.format, generateId));
+    console.log(newArr)
+  }
 
   return (
     <div className={style.button}>

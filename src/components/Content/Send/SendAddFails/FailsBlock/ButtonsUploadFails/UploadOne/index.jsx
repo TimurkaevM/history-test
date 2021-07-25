@@ -1,20 +1,26 @@
 import { useDispatch } from 'react-redux';
 import { UploadOneFail } from '../../../../../../../redux/ducks/files';
+import { v4 as uuidv4 } from 'uuid';
 
 import style from './style.module.css';
 
 function UploadOne(props) {
   const dispatch = useDispatch();
 
+  function generateId () {
+    const id = uuidv4();
+
+      return id;
+  }
+
   function fileUploadHandler(event) {
     const file = event.target.files[0];
-    const photoId = new Date();
 
     if(!file.type.match(props.format)) {
       return
     }
     
-    dispatch(UploadOneFail(file, props.format, photoId));
+    dispatch(UploadOneFail(file, props.format, generateId));
 }
 
 
