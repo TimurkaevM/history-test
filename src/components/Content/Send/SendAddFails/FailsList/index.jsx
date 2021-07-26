@@ -6,24 +6,42 @@ import photo from '../../../../../assets/Icons/photo.svg';
 import style from './style.module.css';
 
 function FailsList(props) {
+
   return (
     <ul className={`${style.fails__list} ${props.failAdd ? '' : ''}`}>
-      <li className={style.list__item}>
-        <img src={photo} alt="" />
-        <p className={style.list__name}>Фото</p>
-      </li>
-      <li className={style.list__item}>
-        <img src={doc} alt="" />
-        <p className={style.list__name}>Документы</p>
-      </li>
-      <li className={style.list__item}>
-        <img src={video} alt="" />
-        <p className={style.list__name}>Видео</p>
-      </li>
-      <li className={style.list__item}>
-        <img src={sound} alt="" />
-        <p>Аудио</p>
-      </li>
+      {props.photo.length === 0 && props.photos.length === 0 ?
+        null : (
+          <li className={style.list__item}>
+            <img src={photo} alt="" />
+            <p className={style.list__name}>Фото</p>
+          </li>
+        )
+      }
+      {props.document.length === 0 && props.documents.length === 0 ?
+        null : (
+          <li className={style.list__item}>
+            <img src={doc} alt="" />
+            <p className={style.list__name}>Документы</p>
+            <div className={style.fails}></div>
+          </li>
+        )
+      }
+      {props.video.length === 0 && props.videos.length === 0 ?
+        null : (
+          <li className={style.list__item}>
+            <img src={video} alt="" />
+            <p className={style.list__name}>Видео</p>
+          </li>
+        )
+      }
+      {props.audio.length === 0 && props.audios.length === 0 ?
+        null : (
+          <li className={style.list__item}>
+            <img src={sound} alt="" />
+            <p>Аудио</p>
+          </li>
+        )
+      }
     </ul>
   );
 }

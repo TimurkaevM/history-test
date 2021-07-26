@@ -87,7 +87,7 @@ export default function files( state = initialState, action ) {
           ...state,
           materials: {
             ...state.materials,
-            photos: [
+            photo: [
               ...state.materials.photo,
               {photoId: action.id, file: action.payload },
             ]
