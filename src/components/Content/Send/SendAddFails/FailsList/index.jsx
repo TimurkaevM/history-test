@@ -1,38 +1,22 @@
-import video from '../../../../../assets/Icons/video.svg';
-import doc from '../../../../../assets/Icons/doc.svg';
 import sound from '../../../../../assets/Icons/sound.svg';
-import photo from '../../../../../assets/Icons/photo.svg';
+import ListItemDocument from './ListItemDocument';
+import ListItemImage from './ListItemImage';
 
 import style from './style.module.css';
+import ListItemVideo from './ListItemVideo';
 
-function FailsList(props) {
+function FailsList(props) {  
 
   return (
     <ul className={`${style.fails__list} ${props.failAdd ? '' : ''}`}>
       {props.photo.length === 0 && props.photos.length === 0 ?
-        null : (
-          <li className={style.list__item}>
-            <img src={photo} alt="" />
-            <p className={style.list__name}>Фото</p>
-          </li>
-        )
+        null : <ListItemImage photo={props.photo} photos={props.photos} />
       }
       {props.document.length === 0 && props.documents.length === 0 ?
-        null : (
-          <li className={style.list__item}>
-            <img src={doc} alt="" />
-            <p className={style.list__name}>Документы</p>
-            <div className={style.fails}></div>
-          </li>
-        )
+        null : <ListItemDocument document={props.document} documents={props.documents} />
       }
       {props.video.length === 0 && props.videos.length === 0 ?
-        null : (
-          <li className={style.list__item}>
-            <img src={video} alt="" />
-            <p className={style.list__name}>Видео</p>
-          </li>
-        )
+        null : <ListItemVideo video={props.video} videos={props.videos} />
       }
       {props.audio.length === 0 && props.audios.length === 0 ?
         null : (
