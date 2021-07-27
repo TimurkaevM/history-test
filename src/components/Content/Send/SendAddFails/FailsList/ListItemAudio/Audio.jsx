@@ -1,9 +1,11 @@
 import React from 'react';
-import style from './style.module.css';
 import { useState } from 'react';
 
+import style from './style.module.css';
 
-function Image(props) {
+
+
+function Audio(props) {
   const [ url , setUrl] = useState(null);
 
   let reader = new FileReader();
@@ -11,11 +13,14 @@ function Image(props) {
         console.log(reader.result);
         setUrl(reader.result)
       }
-      reader.readAsDataURL(props.photo.file);
+      reader.readAsDataURL(props.audio.file);
+      console.log(props.audio.id)
 
   return (
-    <img className={style.image} src={url} alt="" />
+    <audio src={url} preload='auto' controls preload='auto'>
+          
+    </audio>
   )
 }
 
-export default Image
+export default Audio;

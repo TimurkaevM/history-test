@@ -1,9 +1,10 @@
-import sound from '../../../../../assets/Icons/sound.svg';
 import ListItemDocument from './ListItemDocument';
 import ListItemImage from './ListItemImage';
+import ListItemVideo from './ListItemVideo';
+import ListItemAudio from './ListItemAudio';
 
 import style from './style.module.css';
-import ListItemVideo from './ListItemVideo';
+
 
 function FailsList(props) {  
 
@@ -19,12 +20,7 @@ function FailsList(props) {
         null : <ListItemVideo video={props.video} videos={props.videos} />
       }
       {props.audio.length === 0 && props.audios.length === 0 ?
-        null : (
-          <li className={style.list__item}>
-            <img src={sound} alt="" />
-            <p>Аудио</p>
-          </li>
-        )
+        null : <ListItemAudio audio={props.audio} audios={props.audios} />
       }
     </ul>
   );

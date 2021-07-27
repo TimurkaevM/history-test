@@ -89,7 +89,7 @@ export default function files( state = initialState, action ) {
             ...state.materials,
             photo: [
               ...state.materials.photo,
-              {photoId: action.id, file: action.payload },
+              {id: action.id, file: action.payload },
             ]
           },
         }
@@ -102,7 +102,7 @@ export default function files( state = initialState, action ) {
             ...state.materials,
             video: [
               ...state.materials.video,
-              {videoId: action.id, file: action.payload },
+              {id: action.id, file: action.payload },
             ]
           },
         }
@@ -115,7 +115,7 @@ export default function files( state = initialState, action ) {
             ...state.materials,
             document: [
               ...state.materials.document,
-              {documentId: action.id, file: action.payload },
+              {id: action.id, file: action.payload },
             ]
           },
         }
@@ -128,7 +128,7 @@ export default function files( state = initialState, action ) {
             ...state.materials,
             audio: [
               ...state.materials.audio,
-              {audioId: action.id, file: action.payload },
+              {id: action.id, file: action.payload },
             ]
           },
         }
@@ -145,7 +145,7 @@ export default function files( state = initialState, action ) {
           ...state.materials,
           photos: [
             ...state.materials.photos,
-            {photoId: action.id, files: action.payload },
+            {id: action.id, files: action.payload },
           ]
         },
       }
@@ -158,7 +158,7 @@ export default function files( state = initialState, action ) {
           ...state.materials,
           videos: [
             ...state.materials.videos,
-            {videoId: action.id, files: action.payload },
+            {id: action.id, files: action.payload },
           ]
         },
       }
@@ -171,7 +171,7 @@ export default function files( state = initialState, action ) {
           ...state.materials,
           documents: [
             ...state.materials.document,
-            {documentsId: action.id, files: action.payload },
+            {id: action.id, files: action.payload },
           ]
         },
       }
@@ -184,7 +184,7 @@ export default function files( state = initialState, action ) {
           ...state.materials,
           audios: [
             ...state.materials.audios,
-            {audioId: action.id, files: action.payload },
+            {id: action.id, files: action.payload },
           ]
         },
       }

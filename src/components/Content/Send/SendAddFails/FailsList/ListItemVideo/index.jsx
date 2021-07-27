@@ -1,7 +1,7 @@
 import video from '../../../../../../assets/Icons/video.svg';
 
 import style from './style.module.css';
-import Image from './Image';
+import Video from './Video';
 
 function ListItemVideo(props) {  
 
@@ -14,16 +14,16 @@ function ListItemVideo(props) {
       <div className={style.list__content}>
         {!props.video.length ? null : (
             props.video.map(item => {
-              return <Image video={item}/>
+              return <Video key={item.id} video={item}/>
             })
           )}
           {!props.videos.length ? null : (
             
             props.videos.map(video => {
             
-              return <div className={style.images__group}>
+              return <div key={video.id} className={style.images__group}>
                 {video.files.map(item => {
-                  return <Image video={item}/>
+                  return <Video key={item.id} video={item}/>
                 })}
               </div>
             })

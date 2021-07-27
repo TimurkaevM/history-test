@@ -1,9 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
+import ReactPlayer from 'react-player';
+
 import style from './style.module.css';
-import { useState, useEffect} from 'react';
 
 
-function Image(props) {
+
+function Video(props) {
   const [ url , setUrl] = useState(null);
 
   let reader = new FileReader();
@@ -12,13 +15,11 @@ function Image(props) {
         setUrl(reader.result)
       }
       reader.readAsDataURL(props.video.file);
+      console.log(props.video.id)
 
   return (
-    // <video className={style.image} src={url} alt="" />
-    <video width="750" height="500" controls >
-      <source src={url} type="video/mp4"/>
-     </video>
+      <ReactPlayer url={url} controls />
   )
 }
 
-export default Image;
+export default Video;

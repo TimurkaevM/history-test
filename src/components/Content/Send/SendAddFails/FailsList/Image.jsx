@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.module.css';
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 
 
 function Image(props) {
