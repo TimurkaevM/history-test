@@ -1,11 +1,33 @@
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { UploadOneFail } from '../../../../../../../redux/ducks/files';
+import Dialog from '../../../../../../General/Dialog/index';
+import FormDialog from '../../../../SendForms/FormDialog/index'
 import { v4 as uuidv4 } from 'uuid';
 
 import style from './style.module.css';
 
 function UploadOne(props) {
   const dispatch = useDispatch();
+
+  // const [ openFail, setOpenFail] = useState(false);
+  // const [ format, setFormat] = useState(null);
+  // const body = document.querySelector('body');
+
+  
+  
+  // console.log(openFail);
+
+  // const handleClose = () => {
+  //   body.style.overflow = 'visible'; 
+  //   setOpenFail(false);
+  // }
+
+  // const handleOpen = (type) => {
+  //   body.style.overflow = 'hidden'; 
+  //   setOpenFail(true);
+  //   setFormat(type);
+  // }
 
   function generateId () {
     const id = uuidv4();
@@ -16,11 +38,16 @@ function UploadOne(props) {
   function fileUploadHandler(event) {
     const file = event.target.files[0];
 
+    if(!event.target.files.length) {
+      return 
+    }
     if(!file.type.match(props.format)) {
       return
     }
     
     dispatch(UploadOneFail(file, props.format, generateId));
+    props.handleTypeOpen(file);
+    props.handleClose();
 }
 
 
@@ -34,7 +61,10 @@ function UploadOne(props) {
         <div className={style.button__title}>Добавить один</div>
         <div className={style.button__subtitle}>файл</div>
       </label>
-      <input onChange={(event)=> fileUploadHandler(event)}  type="file" id="oneFail" name="oneFail" />
+      <input onChange={(event)=> fileUploadHandler(event)} type="file" id="oneFail" name="oneFail" />
+      {/* <Dialog handleClose={handleClose} open={openFail}>
+        <FormDialog  handleClose={handleClose} />
+      </Dialog> */}
     </div>
   );
 }

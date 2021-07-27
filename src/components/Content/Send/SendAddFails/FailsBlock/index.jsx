@@ -1,20 +1,40 @@
 import React, { useState } from 'react';
 import CloseButton from '../../../../General/buttons/CloseButton/CloseButton';
 import ButtonsUploadFails from './ButtonsUploadFails';
-import Dialog from '../../../../General/Dialog/index'
+import Dialog from '../../../../General/Dialog/index';
 import video from '../../../../../assets/Icons/video.svg';
 import doc from '../../../../../assets/Icons/doc.svg';
 import sound from '../../../../../assets/Icons/sound.svg';
 import photo from '../../../../../assets/Icons/photo.svg';
+import FormDialog from '../../SendForms/FormDialog/index'
 
 import style from './style.module.css';
+import DialogButtons from '../../../../General/DialogButtons.js';
 
 function FailsBlock(props) {
   const [ open, setOpen] = useState(false);
   const [ format, setFormat] = useState('');
-  const body = document.querySelector('body');
+ 
+  const [ openFail, setOpenFail] = useState(false);
+  const [ type, setType] = useState(null);
 
-  console.log(format)
+  const body = document.querySelector('body');
+  
+  
+  console.log(openFail);
+
+  const handleTypeClose = () => {
+    body.style.overflow = 'visible'; 
+    setOpenFail(false);
+  }
+
+  const handleTypeOpen = (type) => {
+    body.style.overflow = 'hidden'; 
+    setOpenFail(true);
+    setType(type);
+  }
+
+  console.log(open)
 
   const handleClose = () => {
     body.style.overflow = 'visible'; 
@@ -49,8 +69,11 @@ function FailsBlock(props) {
         </li>
         <CloseButton handleClick={props.handleClick} width="35px" height="35px" top="-18px" right="-18px" />
       </ul>
-      <Dialog handleClose={handleClose} open={open}>
-        <ButtonsUploadFails format={format} handleClose={handleClose} />
+      <DialogButtons handleClose={handleClose} open={open}>
+        <ButtonsUploadFails handleTypeOpen={handleTypeOpen} format={format} handleClose={handleClose} />
+      </DialogButtons>
+      <Dialog handleClose={handleTypeClose} open={openFail}>
+        <FormDialog  handleClose={handleTypeClose} />
       </Dialog>
     </React.Fragment>
   );

@@ -16,6 +16,7 @@
   font-size: 16px;
   border-radius: 10px;
   margin-top: 5px;
+  resize: none;
 }
 
 .form__prompt {
@@ -36,4 +37,8 @@
   width: 800px;
   height: 800px;
   background-color: #ffffff;
+}
+
+.active {
+  display: none;
 }

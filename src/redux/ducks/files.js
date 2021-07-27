@@ -5,27 +5,27 @@ const initialState = {
     centuries: [
       {
         id: "1",
-        century: "1",
+        type: "1",
       },
       {
         id: "2",
-        century: "2",
+        type: "2",
       },
       {
         id: "3",
-        century: "3",
+        type: "3",
       },
       {
         id: "4",
-        century: "4",
+        type: "4",
       },
       {
         id: "5",
-        century: "5"
+        type: "5"
       },
       {
         id: "6",
-        century: "6",
+        type: "6",
       },
     ],
     types: [
@@ -80,6 +80,26 @@ const initialState = {
 
 export default function files( state = initialState, action ) {
   switch(action.type) {
+    //Изменение заголовка
+    case "title/change": 
+      return {
+        ...state,
+        materials: {
+          ...state.materials,
+          title: action.payload,
+        },
+      }
+    
+    //Изменение заголовка
+    case "text/change": 
+    return {
+      ...state,
+      materials: {
+        ...state.materials,
+        text: { ...state.materials.text, text: action.payload },
+      },
+    }
+
     //Добавление одного файла
     case "one/upload": 
       if(action.format === "image") {
@@ -194,6 +214,20 @@ export default function files( state = initialState, action ) {
     
     default: 
       return state;
+  }
+}
+
+export const changeTitle = (value) => {
+  return {
+    type: "title/change",
+    payload: value,
+  }
+}
+
+export const changeText = (value) => {
+  return {
+    type: "text/change",
+    payload: value,
   }
 }
 
