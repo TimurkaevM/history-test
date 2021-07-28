@@ -48,6 +48,7 @@ const initialState = {
     name: "",
     year: "",
     author: "",
+    comment: "",
     centuries: [],
     types: [],
   },
@@ -59,7 +60,7 @@ const initialState = {
       text: "",
     },
   
-    photo: [],
+    image: [],
   
     photos: [],
 
@@ -67,7 +68,7 @@ const initialState = {
   
     audios: [],
 
-    document: [],
+    application: [],
   
     documents: [],
 
@@ -90,71 +91,108 @@ export default function files( state = initialState, action ) {
         },
       }
     
-    //Изменение заголовка
+    //Изменение текста
     case "text/change": 
-    return {
-      ...state,
-      materials: {
-        ...state.materials,
-        text: { ...state.materials.text, text: action.payload },
-      },
-    }
+      return {
+        ...state,
+        materials: {
+          ...state.materials,
+          text: { ...state.materials.text, text: action.payload },
+        },
+      }
+
+    //Изменение тегов
+
+    case "tag/centuries/change": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          centuries: [...state.tag.centuries, action.payload], 
+        },
+      }
+
+    case "tag/types/change": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          types: [...state.tag.types, action.payload],
+        },
+      }
+    
+    case "tag/title/change": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          name: action.payload,
+        },
+      }
+
+    case "tag/year/change": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          year: action.payload,
+        },
+      }
+
+    case "tag/author/change": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          author: action.payload,
+        },
+      }
+
+    case "tag/comment/change": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          comment: action.payload,
+        },
+      }
 
     //Добавление одного файла
+    case "text/upload": 
+        return {
+          ...state,
+          tag: {
+            name: "",
+            year: "",
+            author: "",
+            comment: "",
+            centuries: [],
+            types: [],
+          },
+          materials: {
+            ...state.materials,
+            text: {
+              ...state.materials.text,
+              text: action.payload,
+              tag: action.tag,
+            }
+          },
+        }
+
+
     case "one/upload": 
-      if(action.format === "image") {
-        return {
-          ...state,
-          materials: {
-            ...state.materials,
-            photo: [
-              ...state.materials.photo,
-              {id: action.id, file: action.payload },
-            ]
-          },
-        }
-      }
 
-      if(action.format === "video") {
         return {
           ...state,
           materials: {
             ...state.materials,
-            video: [
+            [action.format]: [
               ...state.materials.video,
-              {id: action.id, file: action.payload },
+              {id: action.payload.id, file: action.payload.file, tag: action.tag },
             ]
           },
         }
-      }
 
-      if(action.format === "application") {
-        return {
-          ...state,
-          materials: {
-            ...state.materials,
-            document: [
-              ...state.materials.document,
-              {id: action.id, file: action.payload },
-            ]
-          },
-        }
-      }
-
-      if(action.format === "audio") {
-        return {
-          ...state,
-          materials: {
-            ...state.materials,
-            audio: [
-              ...state.materials.audio,
-              {id: action.id, file: action.payload },
-            ]
-          },
-        }
-      }
-
-      return state;
 
     //добавление группы файлов
     case "group/upload": 
@@ -165,7 +203,7 @@ export default function files( state = initialState, action ) {
           ...state.materials,
           photos: [
             ...state.materials.photos,
-            {id: action.id, files: action.payload },
+            {id: action.id, files: action.payload,  },
           ]
         },
       }
@@ -217,9 +255,51 @@ export default function files( state = initialState, action ) {
   }
 }
 
+export const addedCenturies = (value) => {
+  return {
+    type: "tag/centuries/change",
+    payload: value,
+  }
+}
+
+export const addedTypes = (value) => {
+  return {
+    type: "tag/types/change",
+    payload: value,
+  }
+}
+
 export const changeTitle = (value) => {
   return {
     type: "title/change",
+    payload: value,
+  }
+}
+
+export const changeTitleTag = (value) => {
+  return {
+    type: "tag/title/change",
+    payload: value,
+  }
+}
+
+export const changeYearTag = (value) => {
+  return {
+    type:  "tag/year/change",
+    payload: value,
+  }
+}
+
+export const changeAuthorTag = (value) => {
+  return {
+    type:  "tag/author/change",
+    payload: value,
+  }
+}
+
+export const changeCommentTag = (value) => {
+  return {
+    type: "tag/comment/change",
     payload: value,
   }
 }
@@ -231,12 +311,20 @@ export const changeText = (value) => {
   }
 }
 
-export const UploadOneFail = (file, format, generateId) => {
+export const UploadOneFail = (file, format, tag) => {
   return {
     type: "one/upload",
     payload: file,
     format,
-    id: generateId(),
+    tag: tag,
+  }
+} 
+
+export const UploadTextFail = (tag, file) => {
+  return {
+    type: "text/upload",
+    payload: file,
+    tag,
   }
 } 
 

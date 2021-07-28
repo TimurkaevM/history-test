@@ -1,33 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UploadOneFail } from '../../../../../../../redux/ducks/files';
-import Dialog from '../../../../../../General/Dialog/index';
-import FormDialog from '../../../../SendForms/FormDialog/index'
 import { v4 as uuidv4 } from 'uuid';
 
 import style from './style.module.css';
 
 function UploadOne(props) {
   const dispatch = useDispatch();
-
-  // const [ openFail, setOpenFail] = useState(false);
-  // const [ format, setFormat] = useState(null);
-  // const body = document.querySelector('body');
-
-  
-  
-  // console.log(openFail);
-
-  // const handleClose = () => {
-  //   body.style.overflow = 'visible'; 
-  //   setOpenFail(false);
-  // }
-
-  // const handleOpen = (type) => {
-  //   body.style.overflow = 'hidden'; 
-  //   setOpenFail(true);
-  //   setFormat(type);
-  // }
+  const tag = useSelector(state => state.files.tag)
 
   function generateId () {
     const id = uuidv4();
@@ -44,9 +23,13 @@ function UploadOne(props) {
     if(!file.type.match(props.format)) {
       return
     }
+
+    const obj = {
+      id: generateId(),
+      file: file,
+    }
     
-    dispatch(UploadOneFail(file, props.format, generateId));
-    props.handleTypeOpen(file);
+    props.handleTypeOpen(obj);
     props.handleClose();
 }
 
@@ -62,9 +45,6 @@ function UploadOne(props) {
         <div className={style.button__subtitle}>файл</div>
       </label>
       <input onChange={(event)=> fileUploadHandler(event)} type="file" id="oneFail" name="oneFail" />
-      {/* <Dialog handleClose={handleClose} open={openFail}>
-        <FormDialog  handleClose={handleClose} />
-      </Dialog> */}
     </div>
   );
 }

@@ -4,15 +4,11 @@ import { useState} from 'react';
 
 
 function Document(props) {
-  const [ url , setUrl] = useState(null);
 
   let reader = new FileReader();
       reader.onload = () => {
-        console.log(reader.result);
       }
       reader.readAsDataURL(props.document.file);
-
-      console.log(props.document)
 
   return (
     <div className={style.document}>

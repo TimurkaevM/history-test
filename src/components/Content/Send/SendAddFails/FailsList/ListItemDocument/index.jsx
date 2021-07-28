@@ -12,8 +12,8 @@ function ListItemDocument(props) {
         <p className={style.list__name}>Документы</p>
       </div>
       <div className={style.list__content}>
-        {!props.document.length ? null : (
-          props.document.map(item => {
+        {!props.application.length ? null : (
+          props.application.map(item => {
             return <Document document={item} />
           })
         )}

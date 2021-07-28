@@ -11,11 +11,9 @@ function Video(props) {
 
   let reader = new FileReader();
       reader.onload = () => {
-        console.log(reader.result);
-        setUrl(reader.result)
+        setUrl(reader.result);
       }
       reader.readAsDataURL(props.video.file);
-      console.log(props.video.id)
 
   return (
       <ReactPlayer url={url} controls />

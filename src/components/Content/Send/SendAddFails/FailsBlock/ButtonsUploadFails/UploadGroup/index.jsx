@@ -16,6 +16,10 @@ function UploadGroup(props) {
   function fileUploadHandler(event) {
     const files = [...event.target.files];
 
+    if(!files.length) {
+      return
+    }
+
     const filterFiles = files.filter( file => {
       if(!file.type.match(props.format)) {
         return false
@@ -23,17 +27,22 @@ function UploadGroup(props) {
       return true
     });
 
-    const newArr = [];
+    const obj = {
+      id: generateId(),
+      file: []
+    };
 
     filterFiles.forEach(file => {
-      newArr.push({
+      obj.file.push({
         id: generateId(),
         file: file
       })
     })
 
-    dispatch(UploadGroupFails(newArr, props.format, generateId));
-    console.log(newArr)
+    // dispatch(UploadGroupFails(newArr, props.format, generateId));
+    props.handleTypeOpen(obj);
+    props.handleClose();
+    console.log(obj)
   }
 
   return (

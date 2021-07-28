@@ -19,9 +19,6 @@ function FailsBlock(props) {
   const [ type, setType] = useState(null);
 
   const body = document.querySelector('body');
-  
-  
-  console.log(openFail);
 
   const handleTypeClose = () => {
     body.style.overflow = 'visible'; 
@@ -33,8 +30,6 @@ function FailsBlock(props) {
     setOpenFail(true);
     setType(type);
   }
-
-  console.log(open)
 
   const handleClose = () => {
     body.style.overflow = 'visible'; 
@@ -73,7 +68,7 @@ function FailsBlock(props) {
         <ButtonsUploadFails handleTypeOpen={handleTypeOpen} format={format} handleClose={handleClose} />
       </DialogButtons>
       <Dialog handleClose={handleTypeClose} open={openFail}>
-        <FormDialog  handleClose={handleTypeClose} />
+        <FormDialog type={format} content={type} handleClose={handleTypeClose} />
       </Dialog>
     </React.Fragment>
   );

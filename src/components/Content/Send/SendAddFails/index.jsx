@@ -10,13 +10,13 @@ import style from './style.module.css';
 
 function SendAddFails() {
   const [failAdd, setFailAdd] = useState(false);
-  const photo = useSelector(state => state.files.materials.photo);
+  const photo = useSelector(state => state.files.materials.image);
   const photos = useSelector(state => state.files.materials.photos);
   const audio = useSelector(state => state.files.materials.audio);
   const audios = useSelector(state => state.files.materials.audios);
   const video = useSelector(state => state.files.materials.video);
   const videos = useSelector(state => state.files.materials.videos);
-  const document = useSelector(state => state.files.materials.document);
+  const application = useSelector(state => state.files.materials.application);
   const documents = useSelector(state => state.files.materials.documents);
 
   console.log(photo)
@@ -37,13 +37,13 @@ function SendAddFails() {
         ) : (
           <FailsButton handleClick={handleClickOpen} />
         )}
-        {photo.length === 0 && photos.length === 0 && audio.length === 0 && audios.length === 0 && document.length === 0 && documents.length === 0 && video.length === 0 && videos.length === 0 ?
+        {photo.length === 0 && photos.length === 0 && audio.length === 0 && audios.length === 0 && application.length === 0 && documents.length === 0 && video.length === 0 && videos.length === 0 ?
           null :
           <FailsList 
             photo={photo} 
             audio={audio} 
             video={video} 
-            document={document}
+            application={application}
             photos={photos} 
             audios={audios} 
             videos={videos} 

@@ -36,11 +36,11 @@ function FormText() {
         Добавить текст 
       </div>
       <textarea value={text.text} onChange={handleChange} className={style['form__input-text']} type="text" name="text" placeholder="Введите текст..." />
-      <div onClick={handleOpen} className={text ? style.form__prompt : style.active}>
+      <div onClick={handleOpen} className={text.text ? style.form__prompt : style.active}>
         !!!Принадлежность текста не настроена
       </div>
       <Dialog handleClose={handleClose} open={open}>
-        <FormDialog text={text} handleClose={handleClose} />
+        <FormDialog type="text" content={text} handleClose={handleClose} />
       </Dialog>
     </div>
   )

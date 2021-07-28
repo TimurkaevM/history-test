@@ -16,7 +16,7 @@ function ButtonsUploadFails(props) {
       
       <div className={style.buttons__block}>
         <UploadOne handleTypeOpen={props.handleTypeOpen} handleClose={props.handleClose} format={props.format} />
-        <UploadGroup format={props.format} />
+        <UploadGroup handleTypeOpen={props.handleTypeOpen} handleClose={props.handleClose} format={props.format} />
       </div>
     </div>
   );
