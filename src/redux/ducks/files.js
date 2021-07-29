@@ -205,6 +205,14 @@ export default function files( state = initialState, action ) {
     case "one/upload": 
       return {
         ...state,
+        tag: {
+          name: "",
+          year: "",
+          author: "",
+          comment: "",
+          centuries: [],
+          types: [],
+        },
         materials: {
           ...state.materials,
           [action.format]: {
@@ -222,6 +230,14 @@ export default function files( state = initialState, action ) {
     case "group/upload":
     return {
       ...state,
+      tag: {
+        name: "",
+        year: "",
+        author: "",
+        comment: "",
+        centuries: [],
+        types: [],
+      },
       materials: {
         ...state.materials,
         [action.format]: {
