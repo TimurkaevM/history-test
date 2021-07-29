@@ -1,11 +1,8 @@
-import { useDispatch } from 'react-redux';
-import { UploadGroupFails } from '../../../../../../../redux/ducks/files';
 import { v4 as uuidv4 } from 'uuid';
 
 import style from './style.module.css';
 
 function UploadGroup(props) {
-  const dispatch = useDispatch();
 
   function generateId () {
     const id = uuidv4();
@@ -39,7 +36,6 @@ function UploadGroup(props) {
       })
     })
 
-    // dispatch(UploadGroupFails(newArr, props.format, generateId));
     props.handleTypeOpen(obj);
     props.handleClose();
     console.log(obj)

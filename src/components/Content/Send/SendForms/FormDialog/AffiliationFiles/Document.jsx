@@ -6,12 +6,12 @@ function Document(props) {
   let reader = new FileReader();
       reader.onload = () => {
       }
-      reader.readAsDataURL(props.application.file);
+      reader.readAsDataURL(props.item.file);
 
   return (
     <div className={style.document}>
       {
-        props.application.file.type.match("pdf") ? 
+        props.item.file.type.match("pdf") ? 
         (
           <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.83 710">
             <path fill="#e6e6e6" d="M590.43,107H353.49A94.5,94.5,0,0,0,259,201.49v521A94.5,94.5,0,0,0,353.49,817h300A94.5,94.5,0,0,0,748,722.51V269.25a21.33,21.33,0,0,0-6-14.82L605.77,113.5A21.35,21.35,0,0,0,590.43,107Z" transform="translate(-216.1 -107)"/>
@@ -27,7 +27,7 @@ function Document(props) {
           </svg>
         )
       }
-      <p>{props.application.file.name.slice(0, 14) + '...'}</p>
+      <p>{props.item.file.name.slice(0, 14) + '...'}</p>
     </div>
   )
 }

@@ -10,16 +10,14 @@ import style from './style.module.css';
 
 function SendAddFails() {
   const [failAdd, setFailAdd] = useState(false);
-  const photo = useSelector(state => state.files.materials.image);
-  const photos = useSelector(state => state.files.materials.photos);
-  const audio = useSelector(state => state.files.materials.audio);
-  const audios = useSelector(state => state.files.materials.audios);
-  const video = useSelector(state => state.files.materials.video);
-  const videos = useSelector(state => state.files.materials.videos);
-  const application = useSelector(state => state.files.materials.application);
-  const documents = useSelector(state => state.files.materials.documents);
-
-  console.log(photo)
+  const image = useSelector(state => state.files.materials.image.one);
+  const images = useSelector(state => state.files.materials.image.group);
+  const audio = useSelector(state => state.files.materials.audio.one);
+  const audios = useSelector(state => state.files.materials.audio.group);
+  const video = useSelector(state => state.files.materials.video.one);
+  const videos = useSelector(state => state.files.materials.video.group);
+  const application = useSelector(state => state.files.materials.application.one);
+  const applications = useSelector(state => state.files.materials.application.group);
 
   const handleClickClose = () => {
     setFailAdd(false);
@@ -37,17 +35,17 @@ function SendAddFails() {
         ) : (
           <FailsButton handleClick={handleClickOpen} />
         )}
-        {photo.length === 0 && photos.length === 0 && audio.length === 0 && audios.length === 0 && application.length === 0 && documents.length === 0 && video.length === 0 && videos.length === 0 ?
+        {image.length === 0 && images.length === 0 && audio.length === 0 && audios.length === 0 && application.length === 0 && applications.length === 0 && video.length === 0 && videos.length === 0 ?
           null :
           <FailsList 
-            photo={photo} 
+            image={image} 
             audio={audio} 
             video={video} 
             application={application}
-            photos={photos} 
+            images={images} 
             audios={audios} 
             videos={videos} 
-            documents={documents}   
+            applications={applications}   
             failAdd={failAdd}
           />
         }

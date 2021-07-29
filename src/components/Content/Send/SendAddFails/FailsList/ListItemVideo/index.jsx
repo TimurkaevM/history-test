@@ -22,7 +22,7 @@ function ListItemVideo(props) {
             props.videos.map(video => {
             
               return <div key={video.id} className={style.images__group}>
-                {video.files.map(item => {
+                {video.file.map(item => {
                   return <Video key={item.id} video={item}/>
                 })}
               </div>

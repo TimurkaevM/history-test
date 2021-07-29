@@ -12,19 +12,19 @@ function ListItemImage(props) {
         <p className={style.list__name}>Фото</p>
       </div>
       <div className={style.list__content}>
-        {!props.photo.length ? null : (
-            props.photo.map(photo => {
-              return <Image photo={photo}/>
+        {!props.image.length ? null : (
+            props.image.map(image => {
+              return <Image image={image}/>
             })
           )}
-          {!props.photos.length ? null : (
+          {!props.images.length ? null : (
             
-            props.photos.map(photos => {
+            props.images.map(images => {
             
               return (
                 <div className={style.images__group}>
-                  {photos.files.map(photo => {
-                    return <Image  photo={photo}/>
+                  {images.file.map(image => {
+                    return <Image  image={image}/>
                   })}
                 </div>
               )

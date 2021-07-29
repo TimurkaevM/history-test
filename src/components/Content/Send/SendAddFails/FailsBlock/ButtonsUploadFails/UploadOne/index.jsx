@@ -1,13 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { UploadOneFail } from '../../../../../../../redux/ducks/files';
 import { v4 as uuidv4 } from 'uuid';
 
 import style from './style.module.css';
 
 function UploadOne(props) {
-  const dispatch = useDispatch();
-  const tag = useSelector(state => state.files.tag)
-
+  
   function generateId () {
     const id = uuidv4();
 

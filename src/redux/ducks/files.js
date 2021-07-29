@@ -60,21 +60,36 @@ const initialState = {
       text: "",
     },
   
-    image: [],
+    image: {
+      one: [],
+      group: [],
+    },
   
-    photos: [],
+    // photos:  {
+    //   one: [],
+    //   group: [],
+    // },
 
-    audio: [],
+    audio:  {
+      one: [],
+      group: [],
+    },
   
-    audios: [],
+    // audios: [],
 
-    application: [],
+    application:  {
+      one: [],
+      group: [],
+    },
   
-    documents: [],
+    // documents: [],
 
-    video: [],
+    video:  {
+      one: [],
+      group: [],
+    },
   
-    videos: [],
+    // videos: [],
   },
 
 };
@@ -177,79 +192,41 @@ export default function files( state = initialState, action ) {
               tag: action.tag,
             }
           },
-        }
+        };
 
 
     case "one/upload": 
-
-        return {
-          ...state,
-          materials: {
-            ...state.materials,
-            [action.format]: [
-              ...state.materials.video,
-              {id: action.payload.id, file: action.payload.file, tag: action.tag },
-            ]
-          },
-        }
+      return {
+        ...state,
+        materials: {
+          ...state.materials,
+          [action.format]: {
+            ...state.materials[action.format],
+            one: [
+              ...state.materials[action.format].one, 
+              {id: action.payload.id, file: action.payload.file, tag: action.tag }
+            ],
+          }
+        },
+      };
 
 
     //добавление группы файлов
-    case "group/upload": 
-    if(action.format === "image") {
-      return {
-        ...state,
-        materials: {
-          ...state.materials,
-          photos: [
-            ...state.materials.photos,
-            {id: action.id, files: action.payload,  },
-          ]
-        },
-      }
-    }
+    case "group/upload":
+    return {
+      ...state,
+      materials: {
+        ...state.materials,
+        [action.format]: {
+          ...state.materials[action.format],
+          group: [
+            ...state.materials[action.format].group, 
+            {id: action.payload.id, file: action.payload.file, tag: action.tag }
+          ],
+        }
+      },
+    };
 
-    if(action.format === "video") {
-      return {
-        ...state,
-        materials: {
-          ...state.materials,
-          videos: [
-            ...state.materials.videos,
-            {id: action.id, files: action.payload },
-          ]
-        },
-      }
-    }
-
-    if(action.format === "application") {
-      return {
-        ...state,
-        materials: {
-          ...state.materials,
-          documents: [
-            ...state.materials.document,
-            {id: action.id, files: action.payload },
-          ]
-        },
-      }
-    }
-
-    if(action.format === "audio") {
-      return {
-        ...state,
-        materials: {
-          ...state.materials,
-          audios: [
-            ...state.materials.audios,
-            {id: action.id, files: action.payload },
-          ]
-        },
-      }
-    }
-
-    return state;  
-    
     default: 
       return state;
   }
@@ -328,11 +305,11 @@ export const UploadTextFail = (tag, file) => {
   }
 } 
 
-export const UploadGroupFails = (newArr, format, generateId) => {
+export const UploadGroupFails = (file, format, tag) => {
   return {
     type: "group/upload",
-    payload: newArr,
+    payload: file,
     format,
-    id: generateId(),
+    tag: tag,
   }
 } 

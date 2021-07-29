@@ -1,0 +1,150 @@
+.form__dialog {
+  width: 1180px;
+  height: 800px;
+  border-radius: 20px;
+  background-color: rgb(208, 214, 216);
+  padding: 20px;
+}
+
+.title__info {
+  position: absolute;
+  z-index: 5;
+  top: -35px;
+  left: 0;
+  height: 35px;
+  font-size: 18px;
+  color: #e2d9d9;
+}
+
+.title__info span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+/* Инфо */
+
+.dialog__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.form__input {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.documents {
+  width: 300px;
+  height: 300px;
+  border: 1px solid grey;
+  background-color: #fff;
+}
+
+.document__textarea {
+  width: 300px;
+  height: 300px;
+  border: 1px solid grey;
+  background-color: #fff;
+  resize: none;
+}
+
+/* tags */
+
+.tags:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.tags__affiliation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tags__choice {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 8px;
+}
+.tags__item-choice {
+  min-width: 60px;
+  padding: 7px 4px;
+  background-color: blue;
+  color: #000000; 
+}
+
+.tags__item-choice:not(:first-child) {
+  margin-left: 8px;
+}
+
+.tags__items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tags__item {
+  padding: 4px 2px;
+  background-color: blue;
+  color: #000000; 
+}
+
+.tags__item:not(:first-child) {
+  margin-left: 8px;
+}
+
+
+/* comment */
+
+.comment__title {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.comment__text {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  resize: none;
+}
+
+.dialog__button {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: -40px;
+  width: 100px;
+  padding: 5px 0;
+  background-color: #37b948;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.application {
+  text-align: center;
+  margin-right: 10px;
+}
+.application svg {
+  width: 100px;
+  height: 200px;
+}

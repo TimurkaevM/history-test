@@ -22,7 +22,7 @@ function ListItemAudio(props) {
             props.audios.map(audio => {
             
               return <div key={audio.id} className={style.images__group}>
-                {audio.files.map(item => {
+                {audio.file.map(item => {
                   return <Audio key={item.id} audio={item}/>
                 })}
               </div>

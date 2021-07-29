@@ -13,13 +13,10 @@ function Audio(props) {
         console.log(reader.result);
         setUrl(reader.result)
       }
-      reader.readAsDataURL(props.audio.file);
-      console.log(props.audio.id)
+      reader.readAsDataURL(props.item.file);
 
   return (
-    <audio src={url} controls preload='auto'>
-          
-    </audio>
+    <audio src={url} preload='auto' controls></audio>
   )
 }
 

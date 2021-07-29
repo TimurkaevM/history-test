@@ -14,17 +14,17 @@ function ListItemDocument(props) {
       <div className={style.list__content}>
         {!props.application.length ? null : (
           props.application.map(item => {
-            return <Document document={item} />
+            return <Document application={item} />
           })
         )}
-        {!props.documents.length ? null : (
+        {!props.applications.length ? null : (
           
-          props.documents.map(document => {
+          props.applications.map(application => {
           
             return (
               <div className={style.group}>
-                {document.files.map(item => {
-                  return <Document  document={item}/>
+                {application.file.map(item => {
+                  return <Document  application={item}/>
                 })}
               </div>
             )
