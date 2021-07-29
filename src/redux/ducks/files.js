@@ -64,32 +64,21 @@ const initialState = {
       one: [],
       group: [],
     },
-  
-    // photos:  {
-    //   one: [],
-    //   group: [],
-    // },
 
     audio:  {
       one: [],
       group: [],
     },
-  
-    // audios: [],
 
     application:  {
       one: [],
       group: [],
     },
-  
-    // documents: [],
 
     video:  {
       one: [],
       group: [],
     },
-  
-    // videos: [],
   },
 
 };
@@ -117,7 +106,6 @@ export default function files( state = initialState, action ) {
       }
 
     //Изменение тегов
-
     case "tag/centuries/change": 
       return {
         ...state,
@@ -135,7 +123,26 @@ export default function files( state = initialState, action ) {
           types: [...state.tag.types, action.payload],
         },
       }
+
+    case "tag/centuries/remove": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          centuries: state.tag.centuries.filter(century => century.id !== action.payload), 
+        },
+      }
+
+    case "tag/types/remove": 
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          types: state.tag.types.filter(type => type.id !== action.payload),
+        },
+      }
     
+    // Изменение текста
     case "tag/title/change": 
       return {
         ...state,
@@ -232,6 +239,7 @@ export default function files( state = initialState, action ) {
   }
 }
 
+// Тэги
 export const addedCenturies = (value) => {
   return {
     type: "tag/centuries/change",
@@ -246,6 +254,21 @@ export const addedTypes = (value) => {
   }
 }
 
+export const removeCenturies = (id) => {
+  return {
+    type: "tag/centuries/remove",
+    payload: id,
+  }
+}
+
+export const removeTypes = (id) => {
+  return {
+    type: "tag/types/remove",
+    payload: id,
+  }
+}
+
+// Тексты
 export const changeTitle = (value) => {
   return {
     type: "title/change",
@@ -288,6 +311,7 @@ export const changeText = (value) => {
   }
 }
 
+// Файлы
 export const UploadOneFail = (file, format, tag) => {
   return {
     type: "one/upload",
