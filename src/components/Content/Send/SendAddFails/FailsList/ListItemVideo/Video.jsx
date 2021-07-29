@@ -16,7 +16,10 @@ function Video(props) {
       reader.readAsDataURL(props.video.file);
 
   return (
+    <React.Fragment>
       <ReactPlayer url={url} controls />
+      <div onClick={() => props.handleDeleteFail(props.video.id, "video", props.amount, props.groupId)}>удалить</div>
+    </React.Fragment>
   )
 }
 

@@ -14,7 +14,7 @@ function ListItemVideo(props) {
       <div className={style.list__content}>
         {!props.video.length ? null : (
             props.video.map(item => {
-              return <Video key={item.id} video={item}/>
+              return <Video amount="one" handleDeleteFail={props.handleDeleteFail} key={item.id} video={item}/>
             })
           )}
           {!props.videos.length ? null : (
@@ -23,7 +23,7 @@ function ListItemVideo(props) {
             
               return <div key={video.id} className={style.images__group}>
                 {video.file.map(item => {
-                  return <Video key={item.id} video={item}/>
+                  return <Video groupId = {video.id} amount="group" handleDeleteFail={props.handleDeleteFail} key={item.id} video={item}/>
                 })}
               </div>
             })

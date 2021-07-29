@@ -224,7 +224,44 @@ export default function files( state = initialState, action ) {
           }
         },
       };
+    //Удаление файла
+    case "one/fail/delete": 
+      if( action.amount === "one") {
+        return {
+          ...state,
+          materials: {
+            ...state.materials,
+            [action.format]: {
+              ...state.materials[action.format],
+              one: state.materials[action.format].one.filter( item => item.id !== action.payload)
+            }
+          },
+        };
+      }
 
+    if( action.amount === "group") {
+      return {
+        ...state,
+        materials: {
+          ...state.materials,
+          [action.format]: {
+            ...state.materials[action.format],
+            group: state.materials[action.format].group.map( item => {
+              if(action.groupId === item.id) {
+                return {
+                  ...item,
+                  file: item.file.filter(item => item.id !== action.payload)
+                }
+              }
+
+            return item;
+            }).filter( item => item.file.length !== 0),
+          }
+        },
+      };
+    }
+
+    return state;
 
     //добавление группы файлов
     case "group/upload":
@@ -351,5 +388,15 @@ export const UploadGroupFails = (file, format, tag) => {
     payload: file,
     format,
     tag: tag,
+  }
+} 
+
+export const deleteOneFail = (id, format, amount, groupId) => {
+  return {
+    type: "one/fail/delete",
+    payload: id,
+    format,
+    amount,
+    groupId,
   }
 } 
