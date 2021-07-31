@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import CloseButton from '../buttons/CloseButton/CloseButton';
 import AffiliationFile from './AffiliationFile';
 import AffiliationForms from './AffiliationForms';
-import AffiliationTitle from './AffiliationTitle';
-import AffiliationItems from './AffiliationItems';
+import AffiliationTags from './AffiliationTags';
+import AffiliationTagsGroup from './AffiliationTagsGroup';
 import AffiliationComment from './AffiliationComment';
 import AffiliationFilesGroup from './AffiliationFilesGroup';
 import { UploadGroupFails, UploadOneFail, UploadTextFail } from '../../../../redux/ducks/files';
@@ -55,16 +55,11 @@ function AffiliationDialog(props) {
           <AffiliationFilesGroup type={props.type} content={props.content} />
         )}
       </div>
-      
-      <div className={style.tags}>
-        <AffiliationTitle tag={tag} title="ПЕРИОД/ВЕК:" />
-        <AffiliationItems title="ПЕРИОД/ВЕК:" tags={tags} />
-      </div>
-
-      <div className={style.tags}>
-        <AffiliationTitle tag={tag} title="ТИП/ПРИНАДЛЕЖНОСТЬ:" />
-        <AffiliationItems title="ТИП/ПРИНАДЛЕЖНОСТЬ:" tags={tags} />
-      </div>
+      {!Array.isArray(props.content.file) ? (
+        <AffiliationTags tag={tag} tags={tags} />
+      ) : (
+        <AffiliationTagsGroup tag={tag} tags={tags} checkInfo={props.checkInfo} checkTime={props.checkTime} />
+      )}
 
       <AffiliationComment />
 

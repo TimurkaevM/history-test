@@ -17,21 +17,29 @@ import style from './style.module.css';
 function FailsBlock(props) {
   const [ open, setOpen] = useState(false);
   const [ format, setFormat] = useState('');
- 
   const [ openFail, setOpenFail] = useState(false);
   const [ openTags, setOpenTags] = useState(false);
   const [ type, setType] = useState(null);
+  const [ checkInfo, setCheckInfo ] = useState(false);
+  const [ checkTime, setCheckTime ] = useState(false);
 
   const body = document.querySelector('body');
 
-  console.log(openTags)
+  const changeCheckInfo = () => {
+    setCheckInfo(!checkInfo)
+  }
+
+  const changeCheckTime = () => {
+    setCheckTime(!checkTime)
+  }
 
   const handleTagsClose = () => {
     body.style.overflow = 'visible'; 
     setOpenTags(false);
   }
 
-  const handleTagsOpen = (type) => {
+
+  const handleTagsOpen = () => {
     body.style.overflow = 'hidden'; 
     setOpenTags(true);
   }
@@ -84,10 +92,24 @@ function FailsBlock(props) {
         <ButtonsUploadFails handleTagsOpen={handleTagsOpen} handleTypeOpen={handleTypeOpen} format={format} handleClose={handleClose} />
       </DialogButtons>
       <Dialog handleClose={handleTypeClose} open={openFail}>
-        <FormDialog type={format} content={type} handleClose={handleTypeClose} />
+        <FormDialog 
+          checkInfo={checkInfo} 
+          checkTime={checkTime}  
+          type={format} 
+          content={type} 
+          handleClose={handleTypeClose} 
+        />
       </Dialog>
       <DialogSelectedTags handleClose={handleTagsClose} open={openTags}>
-        <SelectedTags type={format} handleClose={handleTagsClose} handleTypeOpen={handleTypeOpen} />
+        <SelectedTags 
+          changeCheckInfo={changeCheckInfo}
+          changeCheckTime={changeCheckTime} 
+          checkInfo={checkInfo} 
+          checkTime={checkTime}  
+          type={format} 
+          handleClose={handleTagsClose} 
+          handleTypeOpen={handleTypeOpen} 
+        />
       </DialogSelectedTags>
     </React.Fragment>
   );

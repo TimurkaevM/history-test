@@ -5,16 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import style from './style.module.css';
 
 function SelectedTags(props) {
-  const [ checkInfo, setCheckInfo ] = useState(false);
-  const [ checkTime, setCheckTime ] = useState(false);
-
-  const changeCheckInfo = () => {
-    setCheckInfo(!checkInfo)
-  }
-
-  const changeCheckTime = () => {
-    setCheckTime(!checkTime)
-  }
 
   function generateId () {
     const id = uuidv4();
@@ -22,8 +12,14 @@ function SelectedTags(props) {
       return id;
   }
 
+  console.log(!props.checkInfo && !props.checkTime)
+
   function fileUploadHandler(event) {
     const files = [...event.target.files];
+
+    if(!props.checkInfo && !props.checkTime) {
+      return
+    }
 
     if(!files.length) {
       return
@@ -64,10 +60,10 @@ function SelectedTags(props) {
           type="checkbox" 
           id="scales" 
           name="scales"
-          checked={checkInfo} 
-          onChange={changeCheckInfo}
+          checked={props.checkInfo} 
+          onChange={props.changeCheckInfo}
         />
-        <label className={`${style.check__label} ${checkInfo ? style.checked : ""}`} htmlFor="scales">
+        <label className={`${style.check__label} ${props.checkInfo ? style.checked : ""}`} htmlFor="scales">
           <h4>ПРЕДНАДЛЕЖНОСТИ ИНФОРМАЦИИ</h4>
           <p>(ИСТОРИЯ, ЛИЧНОСТЬ, СОБЫТИЕ, ТРАДИЦИИ и т.д.)</p>
         </label>
@@ -75,14 +71,14 @@ function SelectedTags(props) {
 
       <div className={style.check}>
         <input 
-          checked={checkTime} 
-          onChange={changeCheckTime} 
+          checked={props.checkTime} 
+          onChange={props.changeCheckTime} 
           className={style.check__input} 
           type="checkbox" 
           id="horns" 
           name="horns" 
         />
-        <label className={`${style.check__label} ${checkTime ? style.checked : ""}`} htmlFor="horns">
+        <label className={`${style.check__label} ${props.checkTime ? style.checked : ""}`} htmlFor="horns">
           <h4>ВРЕМЯ</h4>
           <p>(ВЕК, ПЕРИОД)</p>
         </label>
@@ -94,7 +90,7 @@ function SelectedTags(props) {
             ДАЛЕЕ
           </div>
         </label>
-        <input onChange={(event)=> fileUploadHandler(event)} multiple={true} type="file" id="groupFiles" name="groupFiles" />
+        <input disabled={!props.checkInfo && !props.checkTime} onChange={(event)=> fileUploadHandler(event)} multiple={true} type="file" id="groupFiles" name="groupFiles" />
       </div>
     </div>
   )
