@@ -1,13 +1,46 @@
-import Header from '../Header';
-import Content from '../Content';
+import History from '../History/index';  
+import { useEffect } from 'react';
+import Auth from '../Auth';
+import View from '../View/index';
+import Registration from '../Registration/index';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import style from './style.module.css'
 
 function App() {
+  const isAuth = useSelector((state) => state.user.isAuth);
+
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(auth());
+  //   dispatch(fetchImages());
+  //   dispatch(fetchTickets());
+  // }, [dispatch]);
+
+  let routes;
+
+  if (isAuth) {
+    routes = (
+      <Switch>
+        <Route exact path="/history" component={History} />
+        <Redirect to="/history" />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route exact path="/" component={View} />
+        <Route path="/auth" component={Auth} />
+        <Route path="/register" component={Registration} />
+        <Redirect to="/" />
+      </Switch>
+    );
+  }
   return (
     <div className={style.app}>
-      <Header />
-      <Content />
+      {routes}
     </div>
   );
 }
