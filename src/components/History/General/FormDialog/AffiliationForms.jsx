@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeAuthorTag, changeTitleTag, changeYearTag } from '../../../../../../redux/ducks/files';
+import { changeAuthorTag, changeTitleTag, changeYearTag } from '../../../../redux/ducks/files';
 
 
 import style from './style.module.css';

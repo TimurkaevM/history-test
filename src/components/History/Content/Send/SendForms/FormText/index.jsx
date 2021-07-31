@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Dialog from '../../../../General/Dialog';
-import FormDialog from '../FormDialog';
+import FormDialog from '../../../../General/FormDialog';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeText } from '../../../../../../redux/ducks/files';
 

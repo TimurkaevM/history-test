@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import CloseButton from '../../../../General/buttons/CloseButton/CloseButton';
+import CloseButton from '../buttons/CloseButton/CloseButton';
 import AffiliationFile from './AffiliationFile';
 import AffiliationForms from './AffiliationForms';
 import AffiliationTitle from './AffiliationTitle';
 import AffiliationItems from './AffiliationItems';
 import AffiliationComment from './AffiliationComment';
 import AffiliationFilesGroup from './AffiliationFilesGroup';
-import { UploadGroupFails, UploadOneFail, UploadTextFail } from '../../../../../../redux/ducks/files';
+import { UploadGroupFails, UploadOneFail, UploadTextFail } from '../../../../redux/ducks/files';
 
 import style from './style.module.css';
 

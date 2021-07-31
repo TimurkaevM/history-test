@@ -6,12 +6,13 @@ import video from '../../../../../../assets/Icons/video.svg';
 import doc from '../../../../../../assets/Icons/doc.svg';
 import sound from '../../../../../../assets/Icons/sound.svg';
 import photo from '../../../../../../assets/Icons/photo.svg';
-import FormDialog from '../../SendForms/FormDialog/index'
-
-import style from './style.module.css';
+import FormDialog from '../../../../General/FormDialog';
 import DialogButtons from '../../../../General/DialogButtons';
 import DialogSelectedTags from '../../../../General/DialogSelectedTags';
 import SelectedTags from './ButtonsUploadFails/SelectedTags';
+
+
+import style from './style.module.css';
 
 function FailsBlock(props) {
   const [ open, setOpen] = useState(false);

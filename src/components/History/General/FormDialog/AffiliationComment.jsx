@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeCommentTag } from '../../../../../../redux/ducks/files';
+import { changeCommentTag } from '../../../../redux/ducks/files';
 
 import style from './style.module.css';
 

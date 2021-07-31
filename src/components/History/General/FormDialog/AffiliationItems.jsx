@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addedTypes, addedCenturies } from '../../../../../../redux/ducks/files';
+import { addedTypes, addedCenturies } from '../../../../redux/ducks/files';
 
 import style from './style.module.css';
 
