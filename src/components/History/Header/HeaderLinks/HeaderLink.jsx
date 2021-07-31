@@ -8,7 +8,7 @@ function HeaderLinks(props) {
       exact
       className={style.link}
       activeClassName={style.active}
-      to={`/${props.path}`}
+      to={props.path}
     >
       {props.children}
     </NavLink>

@@ -1,7 +1,7 @@
 import Header from './Header/index';
 import Content from './Content/index';
 
-function index() {
+function History() {
   return (
     <div>
       <Header />
@@ -10,4 +10,4 @@ function index() {
   )
 }
 
-export default index;
+export default History;

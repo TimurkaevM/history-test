@@ -9,16 +9,31 @@ import photo from '../../../../../../assets/Icons/photo.svg';
 import FormDialog from '../../SendForms/FormDialog/index'
 
 import style from './style.module.css';
-import DialogButtons from '../../../../General/DialogButtons.js';
+import DialogButtons from '../../../../General/DialogButtons';
+import DialogSelectedTags from '../../../../General/DialogSelectedTags';
+import SelectedTags from './ButtonsUploadFails/SelectedTags';
 
 function FailsBlock(props) {
   const [ open, setOpen] = useState(false);
   const [ format, setFormat] = useState('');
  
   const [ openFail, setOpenFail] = useState(false);
+  const [ openTags, setOpenTags] = useState(false);
   const [ type, setType] = useState(null);
 
   const body = document.querySelector('body');
+
+  console.log(openTags)
+
+  const handleTagsClose = () => {
+    body.style.overflow = 'visible'; 
+    setOpenTags(false);
+  }
+
+  const handleTagsOpen = (type) => {
+    body.style.overflow = 'hidden'; 
+    setOpenTags(true);
+  }
 
   const handleTypeClose = () => {
     body.style.overflow = 'visible'; 
@@ -65,11 +80,14 @@ function FailsBlock(props) {
         <CloseButton handleClick={props.handleClick} width="35px" height="35px" top="-18px" right="-18px" />
       </ul>
       <DialogButtons handleClose={handleClose} open={open}>
-        <ButtonsUploadFails handleTypeOpen={handleTypeOpen} format={format} handleClose={handleClose} />
+        <ButtonsUploadFails handleTagsOpen={handleTagsOpen} handleTypeOpen={handleTypeOpen} format={format} handleClose={handleClose} />
       </DialogButtons>
       <Dialog handleClose={handleTypeClose} open={openFail}>
         <FormDialog type={format} content={type} handleClose={handleTypeClose} />
       </Dialog>
+      <DialogSelectedTags handleClose={handleTagsClose} open={openTags}>
+        <SelectedTags type={format} handleClose={handleTagsClose} handleTypeOpen={handleTypeOpen} />
+      </DialogSelectedTags>
     </React.Fragment>
   );
 }

@@ -17,7 +17,7 @@ function Content() {
         <Route path='/history/contribution' component={Contribution} />
         <Route path='/history/chat' component={Chat} />
       </Switch>
-    </div>  
+    </div>
   );
 }
 

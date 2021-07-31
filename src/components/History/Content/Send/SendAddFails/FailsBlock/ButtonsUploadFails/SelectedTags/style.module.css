@@ -1,0 +1,76 @@
+.tags {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.tags__title {
+  font-size: 16px;
+  color: grey;
+  text-align-last: left;
+  margin-bottom: 15px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.check__input {
+  display: block;
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.check__label {
+  display: block;
+  width: 500px;
+  padding: 20px 0;
+  margin-left: 10px;
+  background-color: rgb(110, 155, 206);
+  border-radius: 10px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.checked {
+  background-color: rgb(77, 223, 138);
+}
+
+.check__label p{
+text-align: center;
+font-size: 15px;
+}
+
+.check__label h4{
+text-align: center;
+font-size: 18px;
+}
+
+.button input {
+display: none;
+}
+
+.button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.tags__button {
+    display: block;
+    width: 200px;
+    border-radius: 10px;
+    margin-left: auto;
+    background-color: rgb(110, 155, 206);
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button input {
+  display: none;
+  }

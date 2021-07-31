@@ -21,10 +21,10 @@ function App() {
 
   let routes;
 
-  if (isAuth) {
+  if (!isAuth) {
     routes = (
       <Switch>
-        <Route exact path="/history" component={History} />
+        <Route path="/history" component={History} />
         <Redirect to="/history" />
       </Switch>
     );

@@ -128,15 +128,13 @@ export const auth = () => {
 };
 
 export const registration = (name, email, password) => {
-  let csrfToken = getCsrfToken()
-
   return (dispatch) => {
     dispatch({
       type: CREATE_START,
     });
 
     api
-      .post('/register', {data: {"csrfmiddlewaretoken": csrfToken}}, {
+      .post('/register', {
         name,
         email,
         password,
