@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registration, ChangeError } from '../../redux/ducks/user';
 
+import style from './style.module.css'
+
 
 function Registration() {
   const dispatch = useDispatch();
@@ -65,12 +67,15 @@ function Registration() {
   };
 
   return (
-    <React.Fragment>
+    <div className={style.registr}>
+      <label for="username">Name</label>
       <input placeholder="name" type="name" name="name" value={name} onChange={nameChange} />
+      <label for="email">Email</label>
       <input placeholder="email" type="email" name="email" value={email} onChange={emailChange} />
+      <label for="password">Password</label>
       <input type="password" name={password} value={password} onChange={passwordChange} />
-      <button onClick={handleClick}> YF</button>
-    </React.Fragment>
+      <button onClick={handleClick}>Sign in</button>
+    </div>
   );
 }
 

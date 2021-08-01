@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, ChangeError } from '../../redux/ducks/user';
 
+import style from './style.module.css'
+
 
 function Auth() {
   const dispatch = useDispatch();
@@ -61,11 +63,13 @@ function Auth() {
   };
 
   return (
-    <React.Fragment>
-      <input type="email" name="name" value={email} onChange={emailChange} />
+    <div className={style.auth}>
+      <label for="email">Email</label>
+      <input type="email" name="email" value={email} onChange={emailChange} />
+      <label for="password">Password</label>
       <input type="password" name={password} value={password} onChange={passChange} />
-      <button onClick={handleClick}>sdada</button>
-    </React.Fragment>
+      <button onClick={handleClick}>Sign up</button>
+    </div>
   );
 }
 

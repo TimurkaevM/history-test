@@ -117,7 +117,7 @@ export const auth = () => {
           type: AUTH_SUCCESS,
           payload: data,
         });
-        localStorage.setItem('token', data.token);
+        localStorage.setItem('token', data.access_token);
       })
       .catch((e) => {
         console.error(e);
@@ -173,7 +173,7 @@ export const login = (email, password) => {
           type: LOGIN_SUCCESS,
           payload: data,
         })
-        localStorage.setItem('token', data.token)
+        localStorage.setItem('token', data.access_token)
       })
       .catch((e) => {
         dispatch({

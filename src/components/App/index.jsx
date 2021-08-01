@@ -21,7 +21,7 @@ function App() {
 
   let routes;
 
-  if (!isAuth) {
+  if (isAuth) {
     routes = (
       <Switch>
         <Route path="/history" component={History} />
@@ -31,9 +31,7 @@ function App() {
   } else {
     routes = (
       <Switch>
-        <Route exact path="/" component={View} />
-        <Route path="/auth" component={Auth} />
-        <Route path="/register" component={Registration} />
+        <Route path="/" component={View} />
         <Redirect to="/" />
       </Switch>
     );
