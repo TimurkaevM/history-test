@@ -37,7 +37,7 @@ function FormText() {
       </div>
       <textarea value={text.text} onChange={handleChange} className={style['form__input-text']} type="text" name="text" placeholder="Введите текст..." />
       <div onClick={handleOpen} className={text.text ? style.form__prompt : style.active}>
-        !!!Принадлежность текста не настроена
+        {text.tag ? <span>Принадлежность текста настроена</span> : "!!!Принадлежность текста не настроена"}
       </div>
       <Dialog handleClose={handleClose} open={open}>
         <FormDialog type="text" content={text} handleClose={handleClose} />

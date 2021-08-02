@@ -13,7 +13,7 @@ function Image(props) {
       console.log(reader.result);
       setUrl(reader.result)
     }
-  }, [reader, props.photo.file])
+  }, [reader, props.item.file])
   
   reader.readAsDataURL(props.item.file);
 

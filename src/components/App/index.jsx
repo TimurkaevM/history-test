@@ -21,7 +21,7 @@ function App() {
 
   let routes;
 
-  if (isAuth) {
+  if (!isAuth) {
     routes = (
       <Switch>
         <Route path="/history" component={History} />

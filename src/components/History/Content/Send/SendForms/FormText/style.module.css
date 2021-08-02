@@ -33,6 +33,11 @@
   padding: 7px 0;
   cursor: pointer;
 }
+
+.form__prompt span {
+  color: green;
+}
+
 .form__dialog {
   width: 800px;
   height: 800px;

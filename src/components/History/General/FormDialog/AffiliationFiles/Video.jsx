@@ -8,6 +8,7 @@ import style from './style.module.css';
 
 function Video(props) {
   const [ url , setUrl] = useState(null);
+  console.log(localStorage.getItem('token'))
 
   let reader = new FileReader();
       reader.onload = () => {
@@ -16,7 +17,7 @@ function Video(props) {
       reader.readAsDataURL(props.item.file);
 
   return (
-      <ReactPlayer width={320} height={300} url={url} controls />
+      <ReactPlayer width={180} height={180} url={url} controls />
   )
 }
 
