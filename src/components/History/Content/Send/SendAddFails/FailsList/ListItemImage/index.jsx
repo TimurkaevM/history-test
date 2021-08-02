@@ -14,7 +14,7 @@ function ListItemImage(props) {
       <div className={style.list__content}>
         {!props.image.length ? null : (
             props.image.map(image => {
-              return <Image image={image}/>
+              return <Image amount="one" handleDeleteFail={props.handleDeleteFail} image={image}/>
             })
           )}
           {!props.images.length ? null : (
@@ -24,7 +24,7 @@ function ListItemImage(props) {
               return (
                 <div className={style.images__group}>
                   {images.file.map(image => {
-                    return <Image  image={image}/>
+                    return <Image groupId = {images.id} amount="group" handleDeleteFail={props.handleDeleteFail} image={image}/>
                   })}
                 </div>
               )

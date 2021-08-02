@@ -8,7 +8,6 @@ import style from './style.module.css';
 
 function Video(props) {
   const [ url , setUrl] = useState(null);
-  console.log(localStorage.getItem('token'))
 
   let reader = new FileReader();
       reader.onload = () => {

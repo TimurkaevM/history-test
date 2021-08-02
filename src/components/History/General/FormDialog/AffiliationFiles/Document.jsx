@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.module.css';
+import style from '../style.module.css';
 
 function Document(props) {
 
@@ -9,7 +9,7 @@ function Document(props) {
       reader.readAsDataURL(props.item.file);
 
   return (
-    <div className={style.document}>
+    <div className={style.document__group}>
       {
         props.item.file.type.match("pdf") ? 
         (

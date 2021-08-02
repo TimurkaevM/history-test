@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.module.css';
+import style from '../style.module.css';
 import { useState, useEffect} from 'react';
 
 
@@ -18,7 +18,7 @@ function Image(props) {
   reader.readAsDataURL(props.item.file);
 
   return (
-    <img className={style.document__textarea} src={url} alt="" />
+    <img className={style.document__image} src={url} alt="" />
   )
 }
 

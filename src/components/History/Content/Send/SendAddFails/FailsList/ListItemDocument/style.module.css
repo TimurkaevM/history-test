@@ -36,6 +36,13 @@
   margin-right: 7px;
 }
 
+.img__block {
+  display: block;
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+
 .group {
   display: flex;
   padding: 5px;

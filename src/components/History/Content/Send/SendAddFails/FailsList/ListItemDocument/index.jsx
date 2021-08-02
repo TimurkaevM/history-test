@@ -24,7 +24,7 @@ function ListItemDocument(props) {
             return (
               <div className={style.group}>
                 {application.file.map(item => {
-                  return <Document  application={item}/>
+                  return <Document groupId = {application.id} amount="group" handleDeleteFail={props.handleDeleteFail}  application={item}/>
                 })}
               </div>
             )

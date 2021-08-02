@@ -54,3 +54,111 @@
 .active {
   background-color: #ecaf54;
 }
+
+/* Материал */
+
+.routes {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.material {
+  width: 80%;
+  height: 80px;
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 7px;
+}
+
+.material:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.material__logo {
+  width: 6%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey; 
+}
+
+.material__logo svg {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+.material__name {
+  width: 64%;
+  height: 100%;
+  display: flex;
+  padding-left: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  align-items: center;
+  border-right: 4px solid grey;
+}
+
+.material__date {
+  width: 15%;
+  height: 100%;
+  border-right: 1px solid black;
+  padding: 0 5px;
+}
+
+.date_title {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.date__time {
+  font-size: 20px;
+  color: grey;
+  text-align: center;
+}
+
+.material__status {
+  width: 15%;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.status__title {
+  font-size: 12px;
+  text-align: left;
+  color: black;
+  margin-bottom: 8px;
+}
+.status__variant {
+  color: white;
+  font-size: 21px;
+  text-align: center;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.photo__header {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+
+.photo__title {
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-left: 10px;
+}

@@ -9,7 +9,8 @@ function Document(props) {
       reader.readAsDataURL(props.application.file);
 
   return (
-    <div className={style.document}>
+    <div className={style.img__block}>
+      <div className={style.document}>
       {
         props.application.file.type.match("pdf") ? 
         (
@@ -30,6 +31,7 @@ function Document(props) {
         )
       }
       <p>{props.application.file.name.slice(0, 14) + '...'}</p>
+    </div>
     </div>
   )
 }

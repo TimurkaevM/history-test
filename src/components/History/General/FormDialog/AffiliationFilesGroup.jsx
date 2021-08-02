@@ -8,7 +8,7 @@ import style from './style.module.css';
 function AffiliationFileGroups(props) {
   if(props.type === "image") {
     return (
-      <div>
+      <div className={style.group}>
         {props.content.file.map( item => {
           return <Image item={item} />
         })}
@@ -18,7 +18,7 @@ function AffiliationFileGroups(props) {
 
   if(props.type === "video") {
     return (
-      <div>
+      <div className={style.group}>
         {props.content.file.map( item => {
           return <Video item={item} />
         })}
@@ -28,7 +28,7 @@ function AffiliationFileGroups(props) {
 
   if(props.type === "audio") {
     return (
-      <div>
+      <div className={style.group}>
         {props.content.file.map( item => {
           return <Audio item={item} />
         })}
@@ -38,7 +38,7 @@ function AffiliationFileGroups(props) {
 
   if(props.type === "application") {
       return (
-        <div>
+        <div className={style.group}>
           {props.content.file.map( item => {
             return <Document item={item} />
           })}

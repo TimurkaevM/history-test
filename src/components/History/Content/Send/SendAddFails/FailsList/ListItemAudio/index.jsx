@@ -14,7 +14,7 @@ function ListItemAudio(props) {
       <div className={style.list__content}>
         {!props.audio.length ? null : (
             props.audio.map(item => {
-              return <Audio key={item.id} audio={item}/>
+              return <Audio amount="one" handleDeleteFail={props.handleDeleteFail} key={item.id} audio={item}/>
             })
           )}
           {!props.audios.length ? null : (
@@ -23,7 +23,7 @@ function ListItemAudio(props) {
             
               return <div key={audio.id} className={style.images__group}>
                 {audio.file.map(item => {
-                  return <Audio key={item.id} audio={item}/>
+                  return <Audio groupId = {audio.id} amount="group" handleDeleteFail={props.handleDeleteFail} key={item.id} audio={item}/>
                 })}
               </div>
             })

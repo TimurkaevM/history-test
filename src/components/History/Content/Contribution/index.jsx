@@ -1,10 +1,16 @@
 import { NavLink, Route, Switch } from 'react-router-dom';
 import Material from './Material';
 import Photo from './Photo';
+import jwt_decode from "jwt-decode";
 
 import style from './style.module.css';
 
 function Contribution() {
+  const token = localStorage.getItem('token');
+  const decode = jwt_decode(token);
+
+  console.log(decode);
+
   return (
     <div className={style.contribution}>
       
@@ -18,7 +24,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__count}
                 activeClassName={style.active}
-                to="/contribution/onprocessing/material"
+                to="/history/contribution/onprocessing/material"
               >
                 0
               </NavLink>
@@ -27,7 +33,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__name}
                 activeClassName={style.active}
-                to="/contribution/onprocessing/material"
+                to="/history/contribution/onprocessing/material"
               >
                 Материалы
               </NavLink>
@@ -42,7 +48,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__count}
                 activeClassName={style.active}
-                to="/contribution/photo"
+                to="/history/contribution/photo"
               >
                 0
               </NavLink>
@@ -51,7 +57,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__name}
                 activeClassName={style.active}
-                to="/contribution/photo"
+                to="/history/contribution/photo"
               >
                 фото
               </NavLink>
@@ -62,7 +68,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__count}
                 activeClassName={style.active}
-                to="/contribution/document"
+                to="/history/contribution/document"
               >
                 0
               </NavLink>
@@ -71,7 +77,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__name}
                 activeClassName={style.active}
-                to="/contribution/document"
+                to="/history/contribution/document"
               >
                 документы
               </NavLink>
@@ -82,7 +88,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__count}
                 activeClassName={style.active}
-                to="/contribution/video"
+                to="/history/contribution/video"
               >
                 0
               </NavLink>
@@ -91,7 +97,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__name}
                 activeClassName={style.active}
-                to="/contribution/video"
+                to="/history/contribution/video"
               >
                 видео
               </NavLink>
@@ -102,7 +108,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__count}
                 activeClassName={style.active}
-                to="/contribution/audio"
+                to="/history/contribution/audio"
               >
                 0
               </NavLink>
@@ -111,7 +117,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__name}
                 activeClassName={style.active}
-                to="/contribution/audio"
+                to="/history/contribution/audio"
               >
                 Аудио
               </NavLink>
@@ -122,7 +128,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__count}
                 activeClassName={style.active}
-                to="/contribution/material"
+                to="/history/contribution/material"
               >
                 0
               </NavLink>
@@ -131,7 +137,7 @@ function Contribution() {
               <NavLink
                 className={style.nav__name}
                 activeClassName={style.active}
-                to="/contribution/material"
+                to="/history/contribution/material"
               >
                 Материалы
               </NavLink>
@@ -148,8 +154,8 @@ function Contribution() {
       {/* //routes */}
       <div className={style.routes}>
         <Switch>
-          <Route path="/contribution/onprocessing/material" component={Material} />
-          <Route path="/contribution/photo" component={Photo} />
+          <Route exact path="/history/contribution/onprocessing/material" component={Material} />
+          <Route path="/history/contribution/photo" component={Photo} />
         </Switch>
       </div>
         
