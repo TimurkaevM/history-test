@@ -1,9 +1,12 @@
-import React from 'react'
+import style from './style.module.css'
+import WorkshopMaster from './WorkshopMaster';
+import WorkshopMenu from './WorkshopMenu';
 
 function Workshop() {
   return (
-    <div>
-      Workshop
+    <div className={style.workshop}>
+      {/* <WorkshopMenu /> */}
+      <WorkshopMaster />
     </div>
   )
 }
