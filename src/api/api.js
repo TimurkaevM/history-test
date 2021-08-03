@@ -10,7 +10,7 @@ const headers = {
 };
 
 export const api = axios.create({
-  baseURL: 'http://37.230.116.58/api/',
+  baseURL: 'https://37.230.116.58/api/',
   withCredentials: withCredentials,
   headers
 });
