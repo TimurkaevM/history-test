@@ -12,7 +12,7 @@ function SelectedTags(props) {
       return id;
   }
 
-  console.log(!props.checkInfo && !props.checkTime)
+  console.log(props.format)
 
   function fileUploadHandler(event) {
     const files = [...event.target.files];
@@ -90,7 +90,17 @@ function SelectedTags(props) {
             ДАЛЕЕ
           </div>
         </label>
-        <input disabled={!props.checkInfo && !props.checkTime} onChange={(event)=> fileUploadHandler(event)} multiple={true} type="file" id="groupFiles" name="groupFiles" />
+        {props.format === "application" ? (
+          <input
+            disabled={!props.checkInfo && !props.checkTime} 
+            accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" 
+            onChange={(event)=> fileUploadHandler(event)} 
+            type="file" id="groupFiles" name="groupFiles"
+            multiple={true}
+          />
+        ) : (
+          <input disabled={!props.checkInfo && !props.checkTime} accept={`${props.format}/*`} onChange={(event)=> fileUploadHandler(event)} multiple={true} type="file" id="groupFiles" name="groupFiles" />
+        )}
       </div>
     </div>
   )

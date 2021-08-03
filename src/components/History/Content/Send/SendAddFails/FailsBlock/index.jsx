@@ -109,6 +109,7 @@ function FailsBlock(props) {
           type={format} 
           handleClose={handleTagsClose} 
           handleTypeOpen={handleTypeOpen} 
+          format={format}
         />
       </DialogSelectedTags>
     </React.Fragment>

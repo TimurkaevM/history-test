@@ -40,7 +40,15 @@ function UploadOne(props) {
         <div className={style.button__title}>Добавить один</div>
         <div className={style.button__subtitle}>файл</div>
       </label>
-      <input onChange={(event)=> fileUploadHandler(event)} type="file" id="oneFail" name="oneFail" />
+      {props.format === "application" ? (
+        <input 
+          accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" 
+          onChange={(event)=> fileUploadHandler(event)} 
+          type="file" id="oneFail" name="oneFail" 
+        />
+      ) : (
+        <input accept={`${props.format}/*`} onChange={(event)=> fileUploadHandler(event)} type="file" id="oneFail" name="oneFail" />
+      )}
     </div>
   );
 }
