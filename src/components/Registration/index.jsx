@@ -74,7 +74,7 @@ function Registration() {
       <input placeholder="email" type="email" name="email" value={email} onChange={emailChange} />
       <label for="password">Password</label>
       <input type="password" name={password} value={password} onChange={passwordChange} />
-      <button onClick={handleClick}>Sign in</button>
+      <button disabled={loading} onClick={handleClick}>Sign in</button>
     </div>
   );
 }

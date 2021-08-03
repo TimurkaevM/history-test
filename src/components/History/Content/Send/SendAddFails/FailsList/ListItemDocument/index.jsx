@@ -14,7 +14,7 @@ function ListItemDocument(props) {
       <div className={style.list__content}>
         {!props.application.length ? null : (
           props.application.map(item => {
-            return <Document application={item} />
+            return <Document amount="one" handleDeleteFail={props.handleDeleteFail} application={item} />
           })
         )}
         {!props.applications.length ? null : (
