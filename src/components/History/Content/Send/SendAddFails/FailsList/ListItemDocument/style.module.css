@@ -39,7 +39,10 @@
   border: 1px solid black;
 }
 .document {
+  display: block;
+  text-decoration: none;
   text-align: center;
+  cursor: pointer;
 }
 .logo {
   width: 100px;
