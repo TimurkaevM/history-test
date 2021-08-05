@@ -5,8 +5,8 @@ import WorkshopMenu from './WorkshopMenu';
 function Workshop() {
   return (
     <div className={style.workshop}>
-      <WorkshopMenu />
-      {/* <WorkshopMaster /> */}
+      {/* <WorkshopMenu /> */}
+      <WorkshopMaster />
     </div>
   )
 }

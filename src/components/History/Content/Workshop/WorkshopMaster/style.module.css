@@ -1,34 +1,63 @@
 .master {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin: 10px auto 0;
+  width: 90%;
+}
+
+.master__title {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 10px;
+  margin: 10px auto 0;
+  width: 90%;
 }
 .original {
   display: flex;
-  width: 58%;
+  flex-wrap: wrap;
+  width: 62%;
+}
+
+.original__title {
+  width: 100%;
+  padding: 20px 0;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .original__tusks {
-  width: 20%;
+  width: 23%;
   height: 600px;
   background-color: grey;
 }
 
+.tusks__title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 10px;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 1px solid black;
+}
+
 .original__file {
-  width: 80%;
+  width: 77%;
   height: 600px;
   background-color: green;
 }
 
 .processed {
-  width: 40%;
+  width: 32%;
   height: 600px;
 }
 
 .processed__file {
   width: 100%;
   height: 500px;
-  border: 1px solid black;
+  border: 1px dashed black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,5 +70,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px dashed black;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.processed__button {
+  width: 100%;
+  background-color: orange;
+  height: 60px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
 }
