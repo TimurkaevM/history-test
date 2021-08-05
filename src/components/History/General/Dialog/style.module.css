@@ -4,13 +4,13 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 20;
+  z-index: 100;
   background-color: rgba(0, 0, 0, .6);
 }
 
 .dialog__wrapper {
   position: fixed;
-  z-index: 30;
+  z-index: 120;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
