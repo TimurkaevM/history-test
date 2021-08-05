@@ -24,17 +24,13 @@ function SendAddFails() {
   }
 
   const handleClickOpen = () => {
-    setFailAdd(true);
+    setFailAdd(!failAdd);
   }
 
   return (
     <div className={style.fails}>
       <div className="container">
-        {failAdd ? (
-          <FailsBlock handleClick={handleClickClose} />
-        ) : (
-          <FailsButton handleClick={handleClickOpen} />
-        )}
+        <FailsButton failAdd={failAdd} handleClick={handleClickOpen} />
         {image.length === 0 && images.length === 0 && audio.length === 0 && audios.length === 0 && application.length === 0 && applications.length === 0 && video.length === 0 && videos.length === 0 ?
           null :
           <FailsList 

@@ -86,7 +86,6 @@ function FailsBlock(props) {
           <img src={sound} alt="" />
           <p className={style.block__name}>Аудио</p>
         </li>
-        <CloseButton handleClick={props.handleClick} width="35px" height="35px" top="-18px" right="-18px" />
       </ul>
       <DialogButtons handleClose={handleClose} open={open}>
         <ButtonsUploadFails handleTagsOpen={handleTagsOpen} handleTypeOpen={handleTypeOpen} format={format} handleClose={handleClose} />

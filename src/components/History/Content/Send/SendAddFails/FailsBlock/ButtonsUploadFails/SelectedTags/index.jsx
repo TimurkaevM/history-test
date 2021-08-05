@@ -12,8 +12,6 @@ function SelectedTags(props) {
       return id;
   }
 
-  console.log(props.format)
-
   function fileUploadHandler(event) {
     const files = [...event.target.files];
 
@@ -46,7 +44,6 @@ function SelectedTags(props) {
 
     props.handleTypeOpen(obj);
     props.handleClose();
-    console.log(obj)
   }
 
 

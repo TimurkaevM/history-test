@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger/src';
 import files from './ducks/files';
 import user from './ducks/user';
+import contribution from './ducks/contribution';
 
 
 const logger = createLogger({
@@ -13,6 +14,7 @@ const logger = createLogger({
 const rootReducer = combineReducers({
   files,
   user,
+  contribution,
 });
 
 const store = createStore( rootReducer, applyMiddleware(thunk, logger),
