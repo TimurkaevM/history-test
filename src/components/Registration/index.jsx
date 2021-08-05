@@ -68,11 +68,11 @@ function Registration() {
 
   return (
     <div className={style.registr}>
-      <label for="username">Name</label>
+      <label htmlFor="username">Name</label>
       <input placeholder="name" type="name" name="name" value={name} onChange={nameChange} />
-      <label for="email">Email</label>
+      <label htmlFor="email">Email</label>
       <input placeholder="email" type="email" name="email" value={email} onChange={emailChange} />
-      <label for="password">Password</label>
+      <label htmlFor="password">Password</label>
       <input type="password" name={password} value={password} onChange={passwordChange} />
       <button disabled={loading} onClick={handleClick}>Sign in</button>
     </div>

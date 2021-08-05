@@ -1,0 +1,12 @@
+.photo__header {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+
+.photo__title {
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-left: 10px;
+}

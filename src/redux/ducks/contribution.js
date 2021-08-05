@@ -1,17 +1,5 @@
 import { api } from '../../api/api';
 
-// export const LOGIN_START = 'user/login/start';
-// export const LOGIN_SUCCESS = 'user/login/success';
-// export const LOGIN_ERROR = 'user/login/error';
-// export const POST_LOGIN = 'user/login/post';
-// export const AUTH_FINALLY = 'user/auth/finally';
-// export const CREATE_START = 'user/create/start';
-// export const CREATE_SUCCESS = 'user/create/success';
-// export const CREATE_ERROR = 'user/create/error';
-// export const LOGOUT = 'user/logout';
-// export const CHANGE_ERROR = 'error/change';
-
-
 export const MATERIAL_START = 'material/load/start';
 export const MATERIAL_SUCCESS = 'material/load/success';
 export const PHOTO_START = 'photo/load/start';
@@ -42,6 +30,14 @@ export default function user(state = initialState, action) {
       };
 
     case MATERIAL_SUCCESS:
+      if(action.payload.code === 404) {
+        return {
+          ...state,
+          loading: false,
+          material: action.payload.message,
+        };
+      }
+      
       return {
         ...state,
         loading: false,
@@ -49,17 +45,25 @@ export default function user(state = initialState, action) {
       };
 
     case PHOTO_START:
-        return {
-          ...state,
-          loading: true,
-        };
+      return {
+        ...state,
+        loading: true,
+      };
   
     case PHOTO_SUCCESS:
+      if(action.payload.code === 404) {
         return {
           ...state,
           loading: false,
-          photo: action.payload.message['0'],
+          photo: action.payload.message,
         };
+      }
+      
+      return {
+        ...state,
+        loading: false,
+        photo: action.payload.message['0'],
+      };
 
     case VIDEO_START:
       return {
@@ -68,6 +72,14 @@ export default function user(state = initialState, action) {
       };
     
     case VIDEO_SUCCESS:
+      if(action.payload.code === 404) {
+        return {
+          ...state,
+          loading: false,
+          video: action.payload.message,
+        };
+      }
+
       return {
         ...state,
         loading: false,
@@ -81,6 +93,14 @@ export default function user(state = initialState, action) {
       };
       
     case AUDIO_SUCCESS:
+      if(action.payload.code === 404) {
+        return {
+          ...state,
+          loading: false,
+          audio: action.payload.message,
+        };
+      }
+
       return {
         ...state,
         loading: false,
@@ -94,6 +114,14 @@ export default function user(state = initialState, action) {
       };
       
     case DOCUMENT_SUCCESS:
+      if(action.payload.code === 404) {
+        return {
+          ...state,
+          loading: false,
+          document: action.payload.message,
+        };
+      }
+
       return {
         ...state,
         loading: false,

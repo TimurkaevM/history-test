@@ -3,7 +3,7 @@ import ContributionSidebar from './ContributionSidebar';
 import ContributionRoutes from './ContributionRoutes';
 
 import jwt_decode from "jwt-decode";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getAudio, getDocument, getMaterial, getPhoto, getVideo } from '../../../../redux/ducks/contribution';
 

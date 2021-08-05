@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import FailsBlock from './FailsBlock/index';
 import FailsButton from './FailsButton/index';
 import FailsList from './FailsList/index';
 import MessageSendBtn from './MessageSend/index';
@@ -18,10 +17,6 @@ function SendAddFails() {
   const videos = useSelector(state => state.files.materials.video.group);
   const application = useSelector(state => state.files.materials.application.one);
   const applications = useSelector(state => state.files.materials.application.group);
-
-  const handleClickClose = () => {
-    setFailAdd(false);
-  }
 
   const handleClickOpen = () => {
     setFailAdd(!failAdd);

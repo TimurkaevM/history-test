@@ -1,14 +1,12 @@
 import React from 'react';
+import Photo from './Photo';
 import { useSelector } from 'react-redux';
-
 
 import style from './style.module.css';
 
-function Audio() {
-  const audio = useSelector(state => state.contribution.audio);
-
-  console.log(audio)
-
+function Photos() {
+  const photos = useSelector(state => state.contribution.photo);
+  
   return (
     <div>
       <div className={style.photo__header}>
@@ -21,17 +19,17 @@ function Audio() {
           Картинки
         </div>
       </div>
-
-      <div>
-        {audio.map( item => {
-          return (
-            <img src={item.path_to_file} alt="" />
-          )
-        })}
-      </div>
-
+      {!Array.isArray(photos) ? (
+          <div>{photos}</div>
+        ) : (
+          <div className={style["files-content"]}>
+            {photos.map( photo => {
+              return <Photo key={photo.id} photo={photo} />
+            })}
+          </div>
+      )}
     </div>
   )
 }
 
-export default Audio;
+export default Photos;

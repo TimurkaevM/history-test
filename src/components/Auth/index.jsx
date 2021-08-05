@@ -64,9 +64,9 @@ function Auth() {
 
   return (
     <div className={style.auth}>
-      <label for="email">Email</label>
+      <label htmlFor="email">Email</label>
       <input type="email" name="email" value={email} onChange={emailChange} />
-      <label for="password">Password</label>
+      <label htmlFor="password">Password</label>
       <input type="password" name={password} value={password} onChange={passChange} />
       <button disabled={loading} onClick={handleClick}>Sign up</button>
     </div>

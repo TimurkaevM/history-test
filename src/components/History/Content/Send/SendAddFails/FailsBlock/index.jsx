@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import CloseButton from '../../../../General/buttons/CloseButton/CloseButton';
 import ButtonsUploadFails from './ButtonsUploadFails';
 import Dialog from '../../../../General/Dialog/index';
 import video from '../../../../../../assets/Icons/video.svg';

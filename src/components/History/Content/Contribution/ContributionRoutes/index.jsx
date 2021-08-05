@@ -1,9 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
-import Material from '../Material/index';
-import Photo from '../Photo/index';
-import Video from '../Video';
-import Audio from '../Audio';
-import Document from '../Document';
+import Material from '../Materials/index';
+import Photo from '../Photos/index';
+import Video from '../Videos';
+import Audio from '../Audios';
+import Document from '../Documents';
 import { useSelector } from 'react-redux';
 
 import style from './style.module.css';
