@@ -18,8 +18,8 @@ function AffiliationItems(props) {
   if(props.title === "ТИП/ПРИНАДЛЕЖНОСТЬ:") {
     return (
       <div className={style.tags__items}>
-        {props.tags.types.map(item => {
-            return <div onClick={() => handleAddedTypesClick(item)} key={item.id} className={style["tags__item-choice"]}>{item.type}</div>
+        {props.types.map(item => {
+            return <div onClick={() => handleAddedTypesClick(item)} key={item.id} className={style["tags__item-choice"]}>{item.title}</div>
         })}
       </div>
     )
@@ -28,8 +28,8 @@ function AffiliationItems(props) {
   if(props.title === "ПЕРИОД/ВЕК:") {
     return (
       <div className={style.tags__items}>
-        {props.tags.centuries.map(item => {
-            return <div onClick={() => handleAddedCenturiesClick(item)} key={item.id} className={style["tags__item-choice"]}>{item.type}</div>
+        {props.centuries.map(item => {
+            return <div onClick={() => handleAddedCenturiesClick(item)} key={item.id} className={style["tags__item-choice"]}>{item.title}</div>
         })}
       </div>
     )

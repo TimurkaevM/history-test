@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CloseButton from '../buttons/CloseButton/CloseButton';
 import AffiliationFile from './AffiliationFile';
@@ -9,10 +10,19 @@ import AffiliationFilesGroup from './AffiliationFilesGroup';
 import { UploadGroupFails, UploadOneFail, UploadTextFail } from '../../../../redux/ducks/files';
 
 import style from './style.module.css';
+import { getCenturies, getTypes } from '../../../../redux/ducks/tags';
 
 function AffiliationDialog(props) {
 
   const dispatch = useDispatch();
+
+  const centuries = useSelector(state => state.tags.centuries);
+  const types = useSelector(state => state.tags.types);
+  
+  useEffect(() => {
+    dispatch(getTypes());
+    dispatch(getCenturies());
+  }, [])
 
   const tag = useSelector(state => state.files.tag);
   const tags = useSelector(state => state.files.tags);
@@ -37,8 +47,6 @@ function AffiliationDialog(props) {
     return null;
   }
 
-  console.log(Array.isArray(props.content.file))
-
   return (
     <div className={style.form__dialog}>
       <div className={style.title__info}>
@@ -56,9 +64,9 @@ function AffiliationDialog(props) {
         )}
       </div>
       {!Array.isArray(props.content.file) ? (
-        <AffiliationTags tag={tag} tags={tags} />
+        <AffiliationTags tag={tag} centuries={centuries} types={types} />
       ) : (
-        <AffiliationTagsGroup tag={tag} tags={tags} checkInfo={props.checkInfo} checkTime={props.checkTime} />
+        <AffiliationTagsGroup tag={tag} centuries={centuries} types={types} checkInfo={props.checkInfo} checkTime={props.checkTime} />
       )}
 
       <AffiliationComment />

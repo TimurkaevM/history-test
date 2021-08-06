@@ -26,7 +26,7 @@ function AffiliationTitle(props) {
           {!props.tag.centuries ? 
             null : (
               props.tag.types.map( item => {
-                return  <div onClick={() => handleRemoveTypesClick(item.id)} className={style["tags__item-choice"]}>{item.type}</div>
+                return  <div onClick={() => handleRemoveTypesClick(item.id)} className={style["tags__item-choice"]}>{item.title}</div>
               })
             ) 
           }
@@ -45,7 +45,7 @@ function AffiliationTitle(props) {
           {!props.tag.centuries ? 
             null : (
               props.tag.centuries.map( item => {
-                return  <div onClick={() => handleRemoveCenturiesClick(item.id)} className={style["tags__item-choice"]}>{item.type}</div>
+                return  <div onClick={() => handleRemoveCenturiesClick(item.id)} className={style["tags__item-choice"]}>{item.title}</div>
               })
             ) 
           }

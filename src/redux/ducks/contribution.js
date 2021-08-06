@@ -21,7 +21,7 @@ const initialState = {
   error: '',
 };
 
-export default function user(state = initialState, action) {
+export default function contribution(state = initialState, action) {
   switch (action.type) {
     case MATERIAL_START:
       return {
