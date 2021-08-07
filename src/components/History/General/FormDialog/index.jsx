@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CloseButton from '../buttons/CloseButton/CloseButton';
 import AffiliationFile from './AffiliationFile';
@@ -10,7 +9,7 @@ import AffiliationFilesGroup from './AffiliationFilesGroup';
 import { UploadGroupFails, UploadOneFail, UploadTextFail } from '../../../../redux/ducks/files';
 
 import style from './style.module.css';
-import { getCenturies, getTypes } from '../../../../redux/ducks/tags';
+
 
 function AffiliationDialog(props) {
 
@@ -18,11 +17,6 @@ function AffiliationDialog(props) {
 
   const centuries = useSelector(state => state.tags.centuries);
   const types = useSelector(state => state.tags.types);
-  
-  useEffect(() => {
-    dispatch(getTypes());
-    dispatch(getCenturies());
-  }, [])
 
   const tag = useSelector(state => state.files.tag);
   const tags = useSelector(state => state.files.tags);

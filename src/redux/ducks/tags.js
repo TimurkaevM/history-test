@@ -1,9 +1,9 @@
 import { api } from '../../api/api';
 
-export const CENTURIES_START = 'material/load/start';
-export const CENTURIES_SUCCESS = 'material/load/success';
-export const TYPES_START = 'photo/load/start';
-export const TYPES_SUCCESS = 'photo/load/success';
+export const CENTURIES_START = 'centuries/load/start';
+export const CENTURIES_SUCCESS = 'centuries/load/success';
+export const TYPES_START = 'types/load/start';
+export const TYPES_SUCCESS = 'types/load/success';
 
 const initialState = {
   centuries: [],

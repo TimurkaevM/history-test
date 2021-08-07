@@ -1,49 +1,4 @@
 const initialState = {
-  title: "",
-
-  tags: {
-    centuries: [
-      {
-        id: "1",
-        type: "1",
-      },
-      {
-        id: "2",
-        type: "2",
-      },
-      {
-        id: "3",
-        type: "3",
-      },
-      {
-        id: "4",
-        type: "4",
-      },
-      {
-        id: "5",
-        type: "5"
-      },
-      {
-        id: "6",
-        type: "6",
-      },
-    ],
-    types: [
-      {
-        id: "1",
-        type: "история",
-      },
-      {
-        id: "2",
-        type: "культура",
-      },
-      {
-        id: "3",
-        type: "технологии",
-      }
-    ]
-  },
-
   tag: {
     name: "",
     year: "",

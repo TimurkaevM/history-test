@@ -22,4 +22,4 @@ function AffiliationTags(props) {
   )
 }
 
-export default AffiliationTags
+export default AffiliationTags;

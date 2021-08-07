@@ -1,0 +1,46 @@
+.main {
+  margin-left: 60px;
+}
+
+.input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.label {
+  display: block;
+  width: 500px;
+  height: 150px;
+  background-color: #477a85;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  transition: .5s;
+  box-shadow: 0 0 20px #477a8550;
+}
+
+.label::after {
+  content: "";
+  width: 120px;
+  height: 120px;
+  background-color: #e8f5f7;
+  position: absolute;
+  border-radius: 70px;
+  top: 15px;
+  left: 15px;
+  transition: .5s;
+}
+
+.input:checked + .label:after {
+  left: calc(100% - 35px);
+  transform: translateX(-100px);
+}
+
+.label:active:after {
+  width: 160px;
+}
+
+.input:checked + .label {
+  background-color: #243d42;
+}
