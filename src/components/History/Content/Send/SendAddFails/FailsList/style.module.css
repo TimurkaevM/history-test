@@ -1,6 +1,6 @@
 .fails__list {
-  list-style-type: none;
-  margin-top: 30px;
+  list-style-type: none;  
+  padding-top: 30px;
   visibility: visible;
   transition: .5s;
 }
@@ -9,9 +9,10 @@
   display: none;
   transition: .5s;
 }
-.list__item {
-  cursor: pointer;
+.list__item:not(:last-child) {
+  margin-bottom: 20px;
 }
+
 .list__header {
   display: flex;
   align-items: center;

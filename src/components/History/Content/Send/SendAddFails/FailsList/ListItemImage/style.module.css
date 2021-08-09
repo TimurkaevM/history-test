@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.list__item {
+  padding: 25px 0;
+}
+
 .list__header:hover {
   background-color: #a1bfc0;
   transition: .3s;

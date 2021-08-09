@@ -11,6 +11,7 @@
 }
 .list__item {
   cursor: pointer;
+  padding: 25px 0;
 }
 .list__header {
   display: flex;

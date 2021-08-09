@@ -14,7 +14,7 @@ function Contact(props) {
         to={`/history/chat/${props.contact._id}`}
         activeClassName={styles.active}
       >
-        <li>
+        <li className={styles.contacts__item}>
           <Avatar
             fullname={props.contact.fullname}
             size={'medium'}

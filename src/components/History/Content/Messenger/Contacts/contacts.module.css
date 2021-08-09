@@ -10,11 +10,11 @@
   background-color: rgba(75, 75, 75, 0.22);
   transition: 300ms;
 }
-ul {
+.contacts__list {
   padding: 0;
-  margin-top: 60px;
+  margin-top: 20px;
 }
-li {
+.contacts__item {
   list-style: none;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -32,9 +32,9 @@ a {
 }
 .search-block {
   padding: 5px;
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 25%;
+  width: 100%;
   z-index: 1000;
   background-color: #eeeeee;
 }

@@ -27,7 +27,7 @@ function MainContacts() {
   ) : (
     <div className={styles['main-contact']}>
       <Search />
-      <ul>
+      <ul className={styles.contacts__list}>
         {contacts.map((contact) => {
           return <Contact contact={contact} key={contact._id} />;
         })}

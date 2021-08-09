@@ -9,7 +9,6 @@ import style from "./style.module.css";
 
 function Content() {
   return (
-    <div className={style.content}>
       <Switch>
         <Route exact path='/history' component={Main} />
         <Route path='/history/send' component={Send} />
@@ -17,7 +16,6 @@ function Content() {
         <Route path='/history/contribution' component={Contribution} />
         <Route path='/history/chat' component={Messenger} />
       </Switch>
-    </div>
   );
 }
 

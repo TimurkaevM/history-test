@@ -17,23 +17,21 @@ function Messenger() {
   }, [dispatch]);
 
   return (
-    <div
-      className={darkTheme ? styles['container-dark'] : styles['container']}
-      name={darkTheme ? styles['dark'] : null}
-    >
-    <Switch>
-      <Route exact path={'/history/chat/:id?'}>
-        <Contacts />
-        <div className={styles['chat_profile_block']}>
-          <Chat />
-        </div>
-      </Route>
-      <Route>
-        <Contacts />
-        <StartPage />
-      </Route>
-    </Switch>
-  </div>  
+    <div className={styles.messenger}>
+      <div
+        className={darkTheme ? styles['container-dark'] : styles['container']}
+        name={darkTheme ? styles['dark'] : null}
+      >
+        <Switch>
+          <Route exact path={'/history/chat/:id?'}>
+            <Contacts />
+            <div className={styles['chat_profile_block']}>
+              <Chat />
+            </div>
+          </Route>
+        </Switch>
+      </div>  
+    </div>
   )
 }
 
