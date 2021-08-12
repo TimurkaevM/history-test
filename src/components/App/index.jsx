@@ -1,4 +1,4 @@
-import History from '../History/index';  
+import History from '../History/index';
 import { useEffect } from 'react';
 import Auth from '../Auth';
 import View from '../View/index';
@@ -6,7 +6,7 @@ import Registration from '../Registration/index';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import style from './style.module.css'
+import style from './style.module.css';
 
 function App() {
   const isAuth = useSelector((state) => state.user.isAuth);
@@ -36,11 +36,7 @@ function App() {
       </Switch>
     );
   }
-  return (
-    <div className={style.app}>
-      {routes}
-    </div>
-  );
+  return <div className={style.app}>{routes}</div>;
 }
 
 export default App;

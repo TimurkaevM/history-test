@@ -27,7 +27,7 @@
 }
 
 .button input {
-display: none;
+  display: none;
 }
 
 .button:not(:first-child) {

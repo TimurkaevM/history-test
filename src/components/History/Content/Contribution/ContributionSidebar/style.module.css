@@ -33,9 +33,10 @@
   cursor: pointer;
 }
 
-.nav__count:hover, .nav__name:hover {
+.nav__count:hover,
+.nav__name:hover {
   background-color: #ecaf54;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .nav__name {

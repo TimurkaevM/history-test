@@ -7,7 +7,7 @@ function History() {
       <Header />
       <Content />
     </div>
-  )
+  );
 }
 
 export default History;

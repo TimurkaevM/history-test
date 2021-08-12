@@ -88,7 +88,7 @@
   min-width: 60px;
   padding: 7px 4px;
   background-color: blue;
-  color: #000000; 
+  color: #000000;
 }
 
 .tags__item-choice:not(:first-child) {
@@ -104,13 +104,12 @@
 .tags__item {
   padding: 4px 2px;
   background-color: blue;
-  color: #000000; 
+  color: #000000;
 }
 
 .tags__item:not(:first-child) {
   margin-left: 8px;
 }
-
 
 /* comment */
 
@@ -139,7 +138,6 @@
   color: #fff;
   cursor: pointer;
 }
-
 
 .group {
   width: 400px;

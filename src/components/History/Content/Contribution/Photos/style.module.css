@@ -22,7 +22,6 @@
   position: relative;
   z-index: 1;
   width: 30%;
-
 }
 
 .image img {
@@ -42,9 +41,9 @@
   text-transform: uppercase;
   text-align: center;
   line-height: 100px;
-  transition: .4s;
+  transition: 0.4s;
 }
 
-.image:hover .name{
-  opacity: .8;
+.image:hover .name {
+  opacity: 0.8;
 }

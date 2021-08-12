@@ -19,7 +19,7 @@
 
 .link:hover {
   background-color: #ecaf54;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .link__img {
@@ -27,12 +27,12 @@
   height: 50px;
   margin: 0 auto;
 }
-.link__img  img {
+.link__img img {
   width: 100%;
   display: block;
 }
-.link__img  svg .svg__path {
-  stroke:#ecaf54;
-  stroke-width:#ecaf54;
+.link__img svg .svg__path {
+  stroke: #ecaf54;
+  stroke-width: #ecaf54;
   fill: #ecaf54;
-  }
+}

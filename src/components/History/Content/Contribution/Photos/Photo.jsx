@@ -8,7 +8,7 @@ function Photo({ photo }) {
       <img src={photo.path_to_file} alt="#" />
       <div className={style.name}>{photo.title}</div>
     </div>
-  )
+  );
 }
 
 export default Photo;

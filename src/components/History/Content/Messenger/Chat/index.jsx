@@ -10,7 +10,7 @@ function Chat() {
   const id = useParams().id;
 
   if (!id) {
-    return <StartPage/>;
+    return <StartPage />;
   }
 
   return (

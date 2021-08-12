@@ -9,7 +9,6 @@ import contacts from './ducks/contacts';
 import messages from './ducks/messages';
 import contribution from './ducks/contribution';
 
-
 const logger = createLogger({
   diff: true,
   collapsed: true,
@@ -25,8 +24,6 @@ const rootReducer = combineReducers({
   messages,
 });
 
-const store = createStore( rootReducer, applyMiddleware(thunk, logger),
-);
-
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 export default store;

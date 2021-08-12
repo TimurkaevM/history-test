@@ -25,7 +25,7 @@ function Messages() {
 
   // Подгурзка нужных сообщений
   useEffect(() => {
-    if(id !== undefined) {
+    if (id !== undefined) {
       dispatch(loadMessages(id));
     }
   }, [dispatch, id]);

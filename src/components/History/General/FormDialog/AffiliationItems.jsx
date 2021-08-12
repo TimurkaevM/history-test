@@ -7,33 +7,48 @@ function AffiliationItems(props) {
   const dispatch = useDispatch();
 
   const handleAddedCenturiesClick = (item) => {
-    dispatch(addedCenturies(item))
-  }
+    dispatch(addedCenturies(item));
+  };
 
   const handleAddedTypesClick = (item) => {
-    dispatch(addedTypes(item))
-  }
+    dispatch(addedTypes(item));
+  };
 
-
-  if(props.title === "ТИП/ПРИНАДЛЕЖНОСТЬ:") {
+  if (props.title === 'ТИП/ПРИНАДЛЕЖНОСТЬ:') {
     return (
       <div className={style.tags__items}>
-        {props.types.map(item => {
-            return <div onClick={() => handleAddedTypesClick(item)} key={item.id} className={style["tags__item-choice"]}>{item.title}</div>
+        {props.types.map((item) => {
+          return (
+            <div
+              onClick={() => handleAddedTypesClick(item)}
+              key={item.id}
+              className={style['tags__item-choice']}
+            >
+              {item.title}
+            </div>
+          );
         })}
       </div>
-    )
+    );
   }
 
-  if(props.title === "ПЕРИОД/ВЕК:") {
+  if (props.title === 'ПЕРИОД/ВЕК:') {
     return (
       <div className={style.tags__items}>
-        {props.centuries.map(item => {
-            return <div onClick={() => handleAddedCenturiesClick(item)} key={item.id} className={style["tags__item-choice"]}>{item.title}</div>
+        {props.centuries.map((item) => {
+          return (
+            <div
+              onClick={() => handleAddedCenturiesClick(item)}
+              key={item.id}
+              className={style['tags__item-choice']}
+            >
+              {item.title}
+            </div>
+          );
         })}
       </div>
-    )
+    );
   }
 }
 
-export default AffiliationItems
+export default AffiliationItems;

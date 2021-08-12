@@ -17,5 +17,5 @@
 
 .svg:hover .path {
   fill: red;
-  transition: .3s;
+  transition: 0.3s;
 }

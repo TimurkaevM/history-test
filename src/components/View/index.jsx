@@ -10,8 +10,20 @@ function index() {
     <div className={style.view}>
       <div className={style.view__container}>
         <div className={style.view__header}>
-          <NavLink activeClassName={style.view__active} className={style.view__link} to='/'>Авторизация</NavLink>
-          <NavLink activeClassName={style.view__active} className={style.view__link} to='/register'>Регистрация</NavLink>
+          <NavLink
+            activeClassName={style.view__active}
+            className={style.view__link}
+            to="/"
+          >
+            Авторизация
+          </NavLink>
+          <NavLink
+            activeClassName={style.view__active}
+            className={style.view__link}
+            to="/register"
+          >
+            Регистрация
+          </NavLink>
         </div>
         <div className={style.view__routes}>
           <Route exact path="/" component={Auth} />
@@ -19,7 +31,7 @@ function index() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default index;

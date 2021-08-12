@@ -4,12 +4,10 @@ import SendAddFails from './SendAddFails';
 import { getCenturies, getTypes } from '../../../../redux/ducks/tags';
 import { useEffect } from 'react';
 
-
 import style from './style.module.css';
 import { useDispatch } from 'react-redux';
 
 function Send() {
-
   const dispatch = useDispatch();
 
   useEffect(() => {

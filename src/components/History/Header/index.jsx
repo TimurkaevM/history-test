@@ -1,7 +1,7 @@
 import HeaderLinks from './HeaderLinks';
 import HeaderInfo from './HeaderInfo';
 
-import style from "./style.module.css";
+import style from './style.module.css';
 
 function Header() {
   return (

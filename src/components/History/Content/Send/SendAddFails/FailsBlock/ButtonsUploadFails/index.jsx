@@ -5,18 +5,29 @@ import UploadOne from './UploadOne';
 import style from './style.module.css';
 
 function ButtonsUploadFails(props) {
-
   return (
     <div className={style.buttons}>
-      <CloseButton bgColor="initial" handleClick={props.handleClose} width="35px" height="35px" top="-40px" right="0" />
-      <div className={style.buttons__title}>
-        Выберите тип загрузки
-      </div>
+      <CloseButton
+        bgColor="initial"
+        handleClick={props.handleClose}
+        width="35px"
+        height="35px"
+        top="-40px"
+        right="0"
+      />
+      <div className={style.buttons__title}>Выберите тип загрузки</div>
 
-      
       <div className={style.buttons__block}>
-        <UploadOne handleTypeOpen={props.handleTypeOpen} handleClose={props.handleClose} format={props.format} />
-        <UploadGroup handleTagsOpen={props.handleTagsOpen} handleClose={props.handleClose} format={props.format} />
+        <UploadOne
+          handleTypeOpen={props.handleTypeOpen}
+          handleClose={props.handleClose}
+          format={props.format}
+        />
+        <UploadGroup
+          handleTagsOpen={props.handleTagsOpen}
+          handleClose={props.handleClose}
+          format={props.format}
+        />
       </div>
     </div>
   );

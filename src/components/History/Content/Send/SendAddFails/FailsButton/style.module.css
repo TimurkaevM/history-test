@@ -5,12 +5,12 @@
 .fails__add-btn {
   width: 40px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   position: absolute;
   z-index: 15;
   top: -20px;
   left: -1px;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 100%;
 }
 

@@ -30,14 +30,14 @@ export default function contribution(state = initialState, action) {
       };
 
     case MATERIAL_SUCCESS:
-      if(action.payload.code === 404) {
+      if (action.payload.code === 404) {
         return {
           ...state,
           loading: false,
           material: action.payload.message,
         };
       }
-      
+
       return {
         ...state,
         loading: false,
@@ -49,16 +49,16 @@ export default function contribution(state = initialState, action) {
         ...state,
         loading: true,
       };
-  
+
     case PHOTO_SUCCESS:
-      if(action.payload.code === 404) {
+      if (action.payload.code === 404) {
         return {
           ...state,
           loading: false,
           photo: action.payload.message,
         };
       }
-      
+
       return {
         ...state,
         loading: false,
@@ -70,9 +70,9 @@ export default function contribution(state = initialState, action) {
         ...state,
         loading: true,
       };
-    
+
     case VIDEO_SUCCESS:
-      if(action.payload.code === 404) {
+      if (action.payload.code === 404) {
         return {
           ...state,
           loading: false,
@@ -91,9 +91,9 @@ export default function contribution(state = initialState, action) {
         ...state,
         loading: true,
       };
-      
+
     case AUDIO_SUCCESS:
-      if(action.payload.code === 404) {
+      if (action.payload.code === 404) {
         return {
           ...state,
           loading: false,
@@ -112,9 +112,9 @@ export default function contribution(state = initialState, action) {
         ...state,
         loading: true,
       };
-      
+
     case DOCUMENT_SUCCESS:
-      if(action.payload.code === 404) {
+      if (action.payload.code === 404) {
         return {
           ...state,
           loading: false,
@@ -152,7 +152,7 @@ export const getMaterial = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
 
@@ -175,7 +175,7 @@ export const getPhoto = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
 
@@ -198,7 +198,7 @@ export const getVideo = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
 
@@ -221,7 +221,7 @@ export const getAudio = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
 
@@ -244,6 +244,6 @@ export const getDocument = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };

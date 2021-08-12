@@ -30,9 +30,9 @@ function Messenger() {
             </div>
           </Route>
         </Switch>
-      </div>  
+      </div>
     </div>
-  )
+  );
 }
 
 export default Messenger;

@@ -1,4 +1,4 @@
-import style from './style.module.css'
+import style from './style.module.css';
 import WorkshopMaster from './WorkshopMaster';
 import WorkshopMenu from './WorkshopMenu';
 
@@ -8,7 +8,7 @@ function Workshop() {
       {/* <WorkshopMenu /> */}
       <WorkshopMaster />
     </div>
-  )
+  );
 }
 
 export default Workshop;

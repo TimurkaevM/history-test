@@ -2,11 +2,9 @@ import React from 'react';
 import AffiliationTitle from './AffiliationTitle';
 import AffiliationItems from './AffiliationItems';
 
-
 import style from './style.module.css';
 
 function AffiliationTagsGroup(props) {
-
   return (
     <React.Fragment>
       <div className={props.checkTime ? style.tags : style.deactivate}>
@@ -19,7 +17,7 @@ function AffiliationTagsGroup(props) {
         <AffiliationItems title="ТИП/ПРИНАДЛЕЖНОСТЬ:" types={props.types} />
       </div>
     </React.Fragment>
-  )
+  );
 }
 
 export default AffiliationTagsGroup;

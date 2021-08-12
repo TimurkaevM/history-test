@@ -20,7 +20,7 @@ export default function contribution(state = initialState, action) {
         loading: true,
       };
 
-    case CENTURIES_SUCCESS:      
+    case CENTURIES_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -32,14 +32,13 @@ export default function contribution(state = initialState, action) {
         ...state,
         loading: true,
       };
-  
-    case TYPES_SUCCESS:      
+
+    case TYPES_SUCCESS:
       return {
         ...state,
         loading: false,
         types: action.payload.message,
       };
-
 
     default:
       return state;
@@ -65,7 +64,7 @@ export const getCenturies = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
 
@@ -88,6 +87,6 @@ export const getTypes = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };

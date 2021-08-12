@@ -1,7 +1,7 @@
 .list__header {
   display: flex;
   align-items: center;
-  padding: 20px 0 ;
+  padding: 20px 0;
   border-bottom: 1px solid black;
   cursor: pointer;
 }
@@ -12,7 +12,7 @@
 
 .list__header:hover {
   background-color: #a1bfc0;
-  transition: .3s;
+  transition: 0.3s;
 }
 .list__item:last-child {
   margin-bottom: 0;
@@ -61,7 +61,6 @@
   margin-right: 7px;
 }
 
-
 .remove {
   position: absolute;
   top: 0;
@@ -84,5 +83,5 @@
 
 .svg:hover .path {
   fill: red;
-  transition: .3s;
+  transition: 0.3s;
 }

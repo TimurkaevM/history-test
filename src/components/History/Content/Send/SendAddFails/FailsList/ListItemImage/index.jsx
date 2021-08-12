@@ -3,8 +3,7 @@ import photo from '../../../../../../../assets/Icons/photo.svg';
 import style from './style.module.css';
 import Image from './Image';
 
-function ListItemImage(props) {  
-
+function ListItemImage(props) {
   return (
     <li className={style.list__item}>
       <div className={style.list__header}>
@@ -12,26 +11,37 @@ function ListItemImage(props) {
         <p className={style.list__name}>Фото</p>
       </div>
       <div className={style.list__content}>
-        {!props.image.length ? null : (
-            props.image.map(image => {
-              return <Image amount="one" handleDeleteFail={props.handleDeleteFail} image={image}/>
-            })
-          )}
-          {!props.images.length ? null : (
-            
-            props.images.map(images => {
-            
+        {!props.image.length
+          ? null
+          : props.image.map((image) => {
+              return (
+                <Image
+                  amount="one"
+                  handleDeleteFail={props.handleDeleteFail}
+                  image={image}
+                />
+              );
+            })}
+        {!props.images.length
+          ? null
+          : props.images.map((images) => {
               return (
                 <div className={style.images__group}>
-                  {images.file.map(image => {
-                    return <Image groupId = {images.id} amount="group" handleDeleteFail={props.handleDeleteFail} image={image}/>
+                  {images.file.map((image) => {
+                    return (
+                      <Image
+                        groupId={images.id}
+                        amount="group"
+                        handleDeleteFail={props.handleDeleteFail}
+                        image={image}
+                      />
+                    );
                   })}
                 </div>
-              )
-            })
-          )}
+              );
+            })}
       </div>
-    </li>      
+    </li>
   );
 }
 

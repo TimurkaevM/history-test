@@ -5,13 +5,12 @@ import { deleteOneFail } from '../../../../../../../redux/ducks/files';
 import style from './style.module.css';
 
 function DialogDeleteFail({ open, handleClose }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleDeleteFail = () => {
     dispatch(deleteOneFail(open.id, open.format, open.amount, open.groupId));
     handleClose();
-  }
-
+  };
 
   return (
     <div className={style['dialog-remove']}>
@@ -25,7 +24,7 @@ function DialogDeleteFail({ open, handleClose }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default DialogDeleteFail
+export default DialogDeleteFail;

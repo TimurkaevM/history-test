@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, ChangeError } from '../../redux/ducks/user';
 
-import style from './style.module.css'
-
+import style from './style.module.css';
 
 function Auth() {
   const dispatch = useDispatch();
@@ -67,8 +66,15 @@ function Auth() {
       <label htmlFor="email">Email</label>
       <input type="email" name="email" value={email} onChange={emailChange} />
       <label htmlFor="password">Пароль</label>
-      <input type="password" name={password} value={password} onChange={passChange} />
-      <button disabled={loading} onClick={handleClick}>Авторизоваться</button>
+      <input
+        type="password"
+        name={password}
+        value={password}
+        onChange={passChange}
+      />
+      <button disabled={loading} onClick={handleClick}>
+        Авторизоваться
+      </button>
     </div>
   );
 }

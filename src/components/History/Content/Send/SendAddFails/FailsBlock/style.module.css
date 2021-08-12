@@ -2,7 +2,7 @@
   width: 350px;
   list-style-type: none;
   visibility: visible;
-  transition: .5s;
+  transition: 0.5s;
   border: 1px solid blue;
   position: relative;
   z-index: 2;
@@ -28,13 +28,13 @@
 
 .svg:hover .path {
   fill: red;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .block__active {
   visibility: hidden;
   display: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 .block__item {
   display: flex;
@@ -46,7 +46,7 @@
 }
 .block__item:hover {
   background-color: #a1bfc0;
-  transition: .3s;
+  transition: 0.3s;
 }
 .block__item:last-child {
   border-bottom: none;

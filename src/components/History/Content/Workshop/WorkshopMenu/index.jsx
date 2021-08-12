@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.module.css'
+import style from './style.module.css';
 
 function WorkshopMenu() {
   return (
@@ -19,29 +19,21 @@ function WorkshopMenu() {
       </div>
 
       <div className={style.menu__main}>
-        <div className={style.file}> 
-          <div className={style.file__tasks}>
-            название файла
-          </div>
+        <div className={style.file}>
+          <div className={style.file__tasks}>название файла</div>
         </div>
-        <div className={style.file}> 
-          <div className={style.file__tasks}>
-            название файла
-          </div>
+        <div className={style.file}>
+          <div className={style.file__tasks}>название файла</div>
         </div>
-        <div className={style.file}> 
-          <div className={style.file__tasks}>
-            название файла
-          </div>
+        <div className={style.file}>
+          <div className={style.file__tasks}>название файла</div>
         </div>
-        <div className={style.file}> 
-          <div className={style.file__tasks}>
-            название файла
-          </div>
+        <div className={style.file}>
+          <div className={style.file__tasks}>название файла</div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default WorkshopMenu;

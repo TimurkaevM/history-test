@@ -220,8 +220,8 @@ export const login = (email, password) => {
         dispatch({
           type: LOGIN_SUCCESS,
           payload: data,
-        })
-        localStorage.setItem('token', data.access_token)
+        });
+        localStorage.setItem('token', data.access_token);
       })
       .catch((e) => {
         dispatch({
@@ -281,7 +281,7 @@ export const getMasterRole = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
 
@@ -304,10 +304,9 @@ export const addMasterRole = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
-
 
 export const deleteMasterRole = () => {
   return (dispatch) => {
@@ -328,6 +327,6 @@ export const deleteMasterRole = () => {
       })
       .catch((e) => {
         console.error(e);
-      })
+      });
   };
 };
