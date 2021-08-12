@@ -66,7 +66,7 @@ function Auth() {
     <div className={style.auth}>
       <label htmlFor="email">Email</label>
       <input type="email" name="email" value={email} onChange={emailChange} />
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">Пароль</label>
       <input type="password" name={password} value={password} onChange={passChange} />
       <button disabled={loading} onClick={handleClick}>Авторизоваться</button>
     </div>

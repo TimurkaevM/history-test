@@ -18,7 +18,7 @@ function ContributionSidebar() {
             activeClassName={style.active}
             to="/history/contribution/material"
           >
-            {materials.length}
+            {Array.isArray(materials) ? materials.length : 0}
           </NavLink>
         </div>
         <div>
